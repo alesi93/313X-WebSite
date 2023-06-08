@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>313X - Cyber Investigations & Disputes</title>
+    <link rel="icon" type="image/x-icon" href="./img/313Fav.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=PT+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        line-height: 1.6;
+        color: #081824;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 1px;
+        background-color: white;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+
+      a:visited {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      a:active {
+        text-decoration: none;
+      }
+      .home {
+        width: 100%;
+        height: 100%;
+        /* CSS Smooth Scroll */
+        overflow-y: visible;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+      }
+      section {
+        width: 100%;
+        height: auto;
+        /* Scroll Snap */
+        scroll-snap-align: center;
+      }
+
+      .homePage {
+        padding: 150px;
+        height: auto;
+      }
+      .navBar {
+        margin-bottom: 200px;
+        position: fixed;
+        background-color: #081824;
+        width: 100%;
+        padding-top: 20px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 145px;
+        padding-right: 150px;
+      }
+      .logo {
+        height: 7vh;
+      }
+      .logoImg-footer {
+        height: 5vh;
+        align-self: flex-end;
+      }
+      .items {
+        align-self: center;
+        display: flex;
+        align-items: baseline;
+      }
+      .items-nav {
+        font-size: 20px;
+        color: #808080;
+        cursor: pointer;
+      }
+      .items-nav:hover {
+        color: white;
+      }
+      .dropdown-company,
+      .dropdown-prevention,
+      .dropdown-responseInvestigation,
+      .dropdown-products,
+      .dropdown-lang {
+        display: none;
+        position: absolute;
+        background-color: #081824;
+        min-width: 160px;
+        /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+        padding: 12px 16px;
+        z-index: 1;
+        border-radius: 5px;
+        color: white;
+      }
+      .company,
+      .prevention,
+      .products,
+      .responseInvestigation {
+        margin-right: 30px;
+      }
+      #company {
+        border-bottom: solid #fba32e;
+        padding-bottom: 10px;
+      }
+      .company:hover .dropdown-company,
+      .company:hover .arrow-up,
+      .company:hover .arrow-down {
+        display: block;
+      }
+      .responseInvestigation:hover .dropdown-responseInvestigation {
+        display: block;
+      }
+      .solutions:hover .dropdown-solutions,
+      .solutions:hover .arrow-up {
+        display: block;
+      }
+      .prevention:hover .dropdown-prevention,
+      .prevention:hover .arrow-up {
+        display: block;
+      }
+      .products:hover .dropdown-products,
+      .products:hover .arrow-up {
+        display: block;
+      }
+      .lang:hover .dropdown-lang {
+        display: block;
+      }
+
+      .contactUs {
+        color: #081824;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #fba32e;
+        padding: 5px 20px 5px 20px;
+      }
+      .contactUs:hover {
+        color: white;
+      }
+      .subTitleBig {
+        font-size: 50px;
+        color: white;
+        font-weight: regular;
+        text-align: left;
+        font-family: 'PT Sans', sans-serif;
+        letter-spacing: 2px;
+      }
+      .subTitle {
+        font-size: 25px;
+        color: rgb(206, 204, 204);
+        text-align: center;
+      }
+      .header {
+        font-size: 40px;
+        color: #081824;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .subHeader {
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .text {
+        margin-top: 20px;
+      }
+      .text2 {
+        margin-top: 50px;
+      }
+      .table-padding {
+        padding: 0px 10px;
+      }
+      .text-italic {
+        font-style: italic;
+      }
+      .text-orange {
+        font-weight: bold;
+        color: #fba32e;
+      }
+      .items-dropdown {
+        color: white;
+        display: block;
+        cursor: pointer;
+        font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .items-dropdown:hover {
+        color: #fba32e;
+      }
+
+      .incident {
+        margin-bottom: 50px;
+      }
+
+      .trusted {
+        padding-top: 100px;
+        background: white;
+      }
+
+      .footer-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        background: #081824;
+        padding: 100px 0px 100px 65px;
+      }
+      .services-wrapper,
+      .solutions-wrapper,
+      .products-wrapper,
+      .company-wrapper {
+        display: grid;
+        color: rgb(206, 204, 204);
+        padding: 5px;
+      }
+      .services-header,
+      .products-header,
+      .solutions-header,
+      .company-header {
+        font-size: 30px;
+        color: white;
+      }
+      .solutions-text,
+      .prevention-text,
+      .products-text {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: white;
+      }
+      .solutions-text:hover,
+      .prevention-text:hover,
+      .products-text:hover {
+        color: #fba32e;
+        cursor: pointer;
+      }
+
+      .rights-reserved {
+        font-size: 10px;
+        text-align: right;
+        padding-right: 20px;
+        color: white;
+      }
+      .logo-footer {
+        background-color: #081824;
+        padding-left: 195px;
+        padding-right: 106px;
+        padding-bottom: 20px;
+      }
+      .policy-wrapper {
+        display: flex;
+      }
+      .linkedin-logo {
+        height: 4vh;
+      }
+      .img-footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+      }
+      .saas {
+        padding-right: 20px;
+        padding-left: 20px;
+        color: white;
+      }
+      .policy {
+        color: white;
+      }
+
+      .policy:hover,
+      .saas:hover {
+        color: #fba32e;
+      }
+      .policy-saas-wrapper {
+        display: flex;
+        align-items: end;
+      }
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+      .navbar-sm {
+        display: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .lang-footer {
+        display: none;
+      }
+
+      .span-rights {
+        text-align: end;
+      }
+      @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        p {
+          font-size: 12px;
+        }
+        .homePage {
+          padding: 100px 20px 0px 20px;
+        }
+        .navbar-sm {
+          margin-bottom: 200px;
+          position: fixed;
+          background-color: #081824;
+          width: 100%;
+          padding-top: 20px;
+          padding-left: 20px;
+        }
+        .hamburger {
+          display: block;
+          align-self: center;
+          height: 60px;
+        }
+        .items {
+          display: none;
+        }
+        .hamburger-icon {
+          height: 50px;
+          width: 50px;
+          color: #fba32e;
+          text-align: right;
+        }
+        .nav {
+          display: flex;
+          justify-content: space-between;
+          padding-left: 30px;
+          padding-right: 30px;
+          align-items: center;
+        }
+        .logo {
+          height: 5vh;
+          align-self: center;
+        }
+        .logoImg-footer {
+          height: 5vh;
+          align-self: center;
+        }
+        .logoImg-wrapper {
+          text-align: center;
+        }
+        .items-nav {
+          padding-bottom: 5px;
+        }
+        .header {
+          font-size: 30px;
+        }
+        .subTitleBig {
+          font-size: 32px;
+          color: white;
+          font-weight: regular;
+          text-align: left;
+          font-family: 'PT Sans', sans-serif;
+          letter-spacing: 2px;
+        }
+
+        .incident {
+          margin-bottom: 20px;
+          font-size: 12px;
+        }
+
+        .list-item {
+          margin-bottom: 10px;
+          font-size: 12px;
+        }
+
+        .solutions-footer,
+        .services-footer,
+        .products-footer,
+        .company-footer {
+          display: none;
+        }
+
+        .contact-headquarters,
+        .contact-email,
+        .contact-phone {
+          padding: 40px 0px 40px 0px;
+        }
+        .rights-reserved {
+          padding-right: 0px;
+          padding-left: 10px;
+          padding-top: 20px;
+          text-align: center;
+          color: white;
+        }
+        .globe-footer {
+          color: #808080;
+          height: 35px;
+          padding-right: 5px;
+          color: #fba32e;
+        }
+        .lang-footer {
+          display: block;
+          justify-content: center;
+          align-items: center;
+          padding-left: 0px;
+          justify-content: center;
+        }
+        .lang-text-footer {
+          font-size: 12px;
+          color: #eeebea;
+        }
+        .logo-footer {
+          background-color: #081824;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-bottom: 20px;
+        }
+        .img-footer-wrapper {
+          display: block;
+          color: white;
+        }
+        .policy-wrapper {
+          display: block;
+          text-align: center;
+        }
+        .policy-saas-wrapper {
+          display: block;
+          align-items: center;
+          padding-bottom: 50px;
+        }
+        .linkedin-logo {
+          height: 5vh;
+          padding-left: 0px;
+          margin-bottom: 20px;
+        }
+        .span-rights {
+          text-align: center;
+        }
+        .footer-wrapper {
+          display: block;
+          text-align: center;
+          color: white;
+          background: #081824;
+          padding: 50px 0px 50px 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navBar">
+      <nav>
+        <div class="nav">
+          <div style="padding-bottom: 10px">
+            <a href="./index-en.html">
+              <img
+                class="logo animated fadeInLeft"
+                src="./img/313logo.png "
+                alt="313x logo"
+              />
+            </a>
+          </div>
+          <div class="hamburger animated fadeInRight">
+            <svg
+              onclick="openDivNavbar()"
+              xmlns="http://www.w3.org/2000/svg"
+              class="hamburger-icon"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+
+          <div class="items">
+            <div class="company" id="company">
+              <a class="items-nav" href="./index-en.html">Company</a>
+
+              <!-- <div
+                class="arrow-up animate__animated animate__fadeIn"
+              ></div> -->
+              <div class="dropdown-company animated fadeIn">
+                <a class="items-dropdown" href="./index-en.html#about"
+                  >About 313x</a
+                >
+                <a class="items-dropdown" href="./index-en.html#incident"
+                  >Full Cycle of Incident Management</a
+                >
+                <a class="items-dropdown" href="./index-en.html#industries"
+                  >Industries</a
+                >
+                <a class="items-dropdown" href="./index-en.html#contact"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+            <div class="prevention">
+              <a class="items-nav" href="./Prevention.html">Prevention</a>
+              <div class="dropdown-prevention animated fadeIn">
+                <a class="items-dropdown" href="./Prevention.html#security"
+                  >Security Assessment</a
+                >
+                <a class="items-dropdown" href="./Prevention.html#pentest"
+                  >Penetration Testing</a
+                >
+                <a class="items-dropdown" href="./Prevention.html#redTeaming"
+                  >Red Teaming</a
+                >
+                <a class="items-dropdown" href="./Prevention.html#consulting"
+                  >Consulting and Compliance Audit</a
+                >
+              </div>
+            </div>
+            <div class="responseInvestigation">
+              <a class="items-nav" href="./ResponseInvestigation.html"
+                >Response & Investigation</a
+              >
+              <div class="dropdown-responseInvestigation animated fadeIn">
+                <a
+                  class="items-dropdown"
+                  href="./ResponseInvestigation.html#IncidentResponse"
+                  >Incident Response</a
+                >
+                <a
+                  class="items-dropdown"
+                  href="./ResponseInvestigation.html#incidentInvestigation"
+                  >Cyber Investigation</a
+                >
+                <a
+                  class="items-dropdown"
+                  href="./ResponseInvestigation.html#malware"
+                  >Digital Forensics and Malware Analysis</a
+                >
+              </div>
+            </div>
+
+            <div class="products">
+              <a class="items-nav" href="./Products.html">Products</a>
+              <div class="dropdown-products animated fadeIn">
+                <a class="items-dropdown" href="./Products.html#why313"
+                  >Why 313X | TPCRM</a
+                >
+                <a class="items-dropdown" href="./Products.html#313cases"
+                  >313X | TPCRM use cases</a
+                >
+                <a class="items-dropdown" href="./Products.html#empower"
+                  >Empower your Cybersecurity
+                </a>
+              </div>
+            </div>
+            <div style="display: flex">
+              <a
+                class="contactUs"
+                href="./index-en.html#contact"
+                style="font-size: 16px"
+                >Contact Us</a
+              >
+              <div
+                style="padding-left: 20px; justify-content: center"
+                class="lang"
+              >
+                <svg
+                  class="items-nav"
+                  style="color: #808080; height: 35px"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                  ></path>
+                </svg>
+                <div class="dropdown-lang animated fadeIn">
+                  <a class="items-dropdown" href="./PrivacyPolicy.html"
+                    >Português</a
+                  >
+                  <a class="items-dropdown" href="./PrivacyPolicy-en.html"
+                    >English</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-sm animated fadeIn" id="navbar-sm">
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./index-en.html">Company</a>
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./Prevention.html">Prevention</a>
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./ResponseInvestigation.html"
+              >Response & Investigation</a
+            >
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./Products.html">Products</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="home">
+      <section class="homePage" id="homePage">
+        <h1 class="header">Privacy Policy and Use Terms</h1>
+        <div style="margin-bottom: 20px">
+          <p class="text-italic">
+            This Privacy Policy was last updated and revised on March 10, 2022.
+          </p>
+          <p style="margin-top: 20px">
+            Welcome to
+            <span style="font-weight: bold"
+              >313X<span class="text-orange">|</span>TPCRM!</span
+            >
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">1. ABOUT US</h2>
+          <p>
+            The 313X | TPCRM is a digital platform, developed by
+            <span class="text-orange">313X</span>, which offers a tool for
+            professionals in the area of technology, legal, governance and
+            compliance to optimize the cyber risk management process of their
+            companies and third parties with which they relate.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">2. PURPOSE</h2>
+          <p>
+            The Privacy Policy described here seeks to strengthen 313X's
+            commitment to the security and privacy of Users while using the 313X
+            | TPCRM, as well as aims to favor the principle of transparency.
+          </p>
+          <p>
+            We care about the security of your data and transparency in our
+            operations, and we respect your privacy. Therefore, we explain below
+            what data we collect, how it will be treated, shared and kept safe.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">3. IMPORTANT DEFINITIONS</h2>
+          <ul>
+            <li>
+              <p>
+                <span style="font-weight: bold">“313X”:</span> corporate name
+                313X Serviço de Segurança e Inteligência Cibernética Ltda,
+                registered with the CNPJ/MF under no. 30.221.177/0001-89, and
+                within the scope of this policy, and for the purposes of the
+                GDPR, “controller”;
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">“Client Company”:</span>313X
+                contracting user | TPCRM;
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">"Third-Party Company":</span
+                >user, supplier or service provider of the User-Client Company
+                who is invited to participate and/or send information through
+                313X | TPCRM.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">“Employee”:</span> natural
+                persons who have an employment or other contractual relationship
+                with the User Client Company or Third Party Company and who,
+                when registering and/or being invited by the platform, will have
+                their data processed;
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">“313X | TPCRM": </span
+                >Third-Party Cyber Risk Management system developed, distributed
+                and owned by 313X;
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">"User": </span>natural or legal
+                person who uses 313X | TPCRM;
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">"GDPR": </span>General Data
+                Protection Regulation or Law no. 13,709/18;
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <span style="font-weight: bold">"Personal Data": </span>
+                any information relating to a natural person that identifies him
+                or her, or that, used in combination with other processed
+                information, identifies an individual;
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">"Data Subject": </span>
+                natural person to whom the personal data subject to processing
+                refers.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold"
+                  >"Processing of personal data":
+                </span>
+                processing of personal data means the collection, production,
+                reception, classification, use, access, reproduction,
+                transmission, distribution, processing, archiving, storage,
+                elimination, evaluation or control of information, modification,
+                communication , transfer, dissemination or extraction of
+                personal data;
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">"Controller": </span>
+                natural or legal person, under public or private law,
+                responsible for decisions regarding the processing of personal
+                data;
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">"Purpose": </span>
+                what 313X aims from the processing of personal data;
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">"Consent": </span>
+                free, informed and unambiguous authorization (without leaving
+                any doubts) by which the user agrees to the processing of his
+                personal data for a previously stipulated purpose. After
+                granting consent, the latter may revoke it at any time. However,
+                it should be noted that the revocation of consent does not have
+                the power to invalidate the treatment carried out at a previous
+                moment.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">4. WHAT TYPES OF PERSONAL DATA WE COLLECT?</h2>
+          <p>
+            The 313X, through the 313X platform | TPCRM, collects and/or stores
+            the information that the User provides during the use of our
+            Platform. The following personal data of employees of Client
+            Companies will be processed: (i) full name, (ii) organization name;
+            and (iii) corporate email.
+          </p>
+          <p>
+            Here are examples of the type of information we collect from you and
+            how we use that information:
+          </p>
+          <div style="margin-top: 50px; margin-bottom: 50px">
+            <table>
+              <thead>
+                <tr>
+                  <td>
+                    <p class="text-italic">Context:</p>
+                  </td>
+                  <td>
+                    <p class="text-italic table-padding">types of data:</p>
+                  </td>
+                  <td>
+                    <p class="text-italic table-padding">
+                      Main purpose for data processing:
+                    </p>
+                  </td>
+                  <td>
+                    <p class="text-italic table-padding">Legal Basis:</p>
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <p>Company Information Client</p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      We collect the User Customer Company name, email and
+                      information and its employees with whom we may interact.
+                    </p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      In order to provide the service offered by providing you
+                      with the appropriate functionality.
+                    </p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      Art. 7, V of the GDPR - performance of the contract
+                      between 313X and the User
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Client Company Employee Account Information</p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      We collect personal data from employees of our Client
+                      Companies when they create an account to access and use
+                      the Services, or when they request certain free Services
+                      from our Sites. This information may include business
+                      contact information such as name, email address, title,
+                      company information and password for our services.
+                    </p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      Provide account-related functionality to our users,
+                      monitor account logins, and detect potential fraudulent
+                      logins or account misuse. In addition, we use this
+                      information to fulfill our Service agreement.
+                    </p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      Art. 7, V of the GDPR - performance of the contract
+                      between 313X and the User. Art. 7, IX of the GDPR –
+                      legitimate interest (in case of non-sensitive data).
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Third Party Invitation Information</p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      Users of our service may request that their suppliers or
+                      service providers submit information related to the
+                      company and security on our platform (for example, to
+                      complete a security questionnaire). When a user invites a
+                      supplier, we collect the supplier's name and email
+                      address.
+                    </p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      Contacting suppliers on behalf of our customers to invite
+                      them to communicate with companies through our platform.
+                      Among other things, communication enables our customers to
+                      request and receive safety questionnaires efficiently, and
+                      enables suppliers to request and transmit safety
+                      questionnaires efficiently. In addition, we use this
+                      information to fulfill our service agreement, which may
+                      include requesting, receiving, transmitting and hosting
+                      responses to security questions.
+                    </p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      Art. 7, V of the GDPR - performance of the contract
+                      between 313X and the User. Art. 7, IX of the GDPR -
+                      legitimate interest (in the case of non-sensitive data).
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Feedback / Support</p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      We collect your personal data contained in any inquiry you
+                      send us about our Sites or Services, such as filling out
+                      our online forms, calling or emailing us for the purposes
+                      of general inquiries, support requests or to report an
+                      issue.
+                    </p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      In order to respond to requests, fulfill requests and
+                      provide technical support.
+                    </p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      Art. 7, II of the GDPR – compliance with a civil legal
+                      obligation.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Financial</p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      For credit card payment only, we collect (either directly
+                      or through our payment processor) your payment card
+                      information.
+                    </p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      We use and share your information to fulfill our product
+                      or service supply agreement.
+                    </p>
+                  </td>
+                  <td>
+                    <p class="table-padding">
+                      Art. 7, V of the GDPR - performance of the contract
+                      between 313X and the User.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            313X uses the data received exclusively to respond in the best
+            possible way to the User Client Company and its employees, as well
+            as to support and correctly operate its activities, without carrying
+            out enrichment, sale, or any other act other than that stated in
+            this Privacy Policy.
+          </p>
+          <p>
+            The User, mainly through its employees, is solely and exclusively
+            responsible for verifying with Third Party Company whether there is
+            a need to obtain authorization for the purpose of inviting,
+            registering and/or monitoring the Third Party's cyber health.
+          </p>
+          <p>
+            The User declares to obtain express and prior consent for the
+            purposes of collecting, processing, preserving, sharing and using
+            personal data and sensitive personal data of employees of the Client
+            Company and/or Third Party Company invited and registered to use the
+            313X platform | TPCRM. The User declares that he strictly complies
+            with all provisions of the legislation applicable to Data Protection
+            - GDPR in particular.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">5. PERSONAL DATA STORAGE</h2>
+          <p>
+            Personal data collected or processed by 313X, through 313X | TPCRM,
+            will be stored for the duration of the contract entered into between
+            313X and the User Client Company (article 7, item V of the GDPR).
+          </p>
+          <p>
+            After the end of the contract, the information of the User Client
+            Company and its employees will be stored only to fulfill the purpose
+            contained in the cases provided for by law, as well as due to
+            legitimate interest or consent, with the user having the option to
+            demonstrate at any time the your opposition.
+          </p>
+          <p>
+            Once the right to oppose the treatment is exercised, the personal
+            data processed by Kiral will be deleted, with the exception of cases
+            where the treatment is still necessary due to other hypotheses
+            provided for in the items of art. 7 of the GDPR.
+          </p>
+          <p>
+            In addition, after the end of the processing of personal data, the
+            data will be deleted, with the exception of the conservation cases
+            provided for in article 16 of the GDPR, as follows:
+          </p>
+          <ul>
+            <li>
+              <p>
+                compliance with a legal or regulatory obligation by the
+                controller;
+              </p>
+            </li>
+            <li>
+              <p>
+                study by a research organization, ensuring, whenever possible,
+                the anonymization of personal data;
+              </p>
+            </li>
+            <li>
+              <p>
+                transfer to a third party, as long as the data processing
+                requirements set forth in this Law are respected; or
+              </p>
+            </li>
+            <li>
+              <p>
+                exclusive use of the controller, its access by a third party is
+                prohibited, and provided that the data is anonymized.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">6. WITH WHOM DO WE SHARE PERSONAL DATA?</h2>
+          <p>
+            All personal data collected by the 313X | TPCRM website and platform
+            are related to the Services offered and will be used so that the
+            applications can (i) enable the User Client Company and its
+            employees to access the Services; (ii) secure your online account,
+            as well as (iii) improve the Services provided and the experience of
+            everyone with the platform.
+          </p>
+          <p>
+            In cases where it is necessary to provide the Services, within the
+            limits of Law No. 13.709/2018 (Personal GDPR), 313X will share
+            personal data with third parties, highlighted below:
+          </p>
+        </div>
+        <div style="margin-top: 50px; margin-bottom: 50px">
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <p class="text-italic">Operators (Third-Party):</p>
+                </td>
+                <td>
+                  <p class="text-italic">Intended purpose:</p>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p style="font-weight: bold">MongoDB</p>
+                </td>
+                <td>
+                  <p>
+                    MongoDB is a cloud database software that stores all the
+                    data received by the 313X | TPCRM platform. MongoDB's
+                    guidelines regarding the protection and privacy of personal
+                    data can be accessed here:
+                    <a
+                      href="https://www.salesforce.com/company/privacy/"
+                      class="text-orange"
+                      target="_blank"
+                      >https://www.salesforce.com/company/privacy/</a
+                    >, and those related to security here:
+                    <a
+                      href="https://www.mongodb.com/pt-br/security"
+                      class="text-orange"
+                      target="_blank"
+                      >https://www.mongodb.com/pt-br/security</a
+                    >
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p style="font-weight: bold">Internal Collaborators</p>
+                </td>
+                <td>
+                  <p>
+                    The personal data collected may also be shared internally
+                    with our employees for the exclusive performance of their
+                    duties. To this end, 313X has clear and specific internal
+                    processes and rules through our Information Security Policy.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <span style="font-weight: bold"
+                      >Legal reasons for the disclosure of your data</span
+                    >(Article 7, II of the GDPR - compliance with legal or
+                    regulatory obligations)
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    In certain circumstances, 313X may disclose Personal Data,
+                    to the extent necessary or appropriate, to government
+                    agencies, consultants and other third parties for the
+                    purpose of complying with applicable law or a court order or
+                    subpoena, or if 313X believes in good will that such action
+                    is necessary to:
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        Comply with legislation that requires such disclosure;
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Investigate, prevent or take action related to suspected
+                        or actual illegal activities or to cooperate with
+                        government agencies or to protect national security;
+                      </p>
+                    </li>
+                    <li>
+                      <p>Performance of your contracts;</p>
+                    </li>
+                    <li>
+                      <p>
+                        Investigate and defend against any claims or allegations
+                        made by any third party;
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Protect the security or integrity of the services (for
+                        example, sharing with companies that are experiencing
+                        similar threats);
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Exercising or protecting the rights, property, and
+                        safety of 313X and its affiliated companies;
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Protect the rights and personal safety of its employees,
+                        users or the public;
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        In the event of sale, purchase, merger, reorganization,
+                        liquidation or dissolution of 313X.
+                      </p>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          In the event of sharing Personal Data with third parties, all subjects
+          mentioned in items I and II must use the Personal Data shared in a
+          consistent manner and in accordance with the purposes for which they
+          were collected (or to which the User previously consented) and in
+          accordance with the provisions of this Privacy Policy, other website
+          or country privacy statements, and all applicable privacy and data
+          protection laws.
+        </p>
+        <div class="text2">
+          <h2 class="subHeader">7. HOLDER'S RIGHTS</h2>
+          <p>
+            The Holders of Personal Data, that is, employees of the User
+            Companies (Customers and Third Parties), have the right to request
+            information from 313X regarding the processing of their personal
+            data, as provided for in the GDPR:
+          </p>
+          <ul>
+            <li>
+              <p>Confirmation of the existence of treatment;</p>
+            </li>
+            <li>
+              <p>Data access;</p>
+            </li>
+            <li>
+              <p>Correction of incomplete, inaccurate or out-of-date data;</p>
+            </li>
+            <li>
+              <p>
+                Anonymization, blocking or deletion of unnecessary, excessive or
+                non-GDPR-compliant data;
+              </p>
+            </li>
+            <li>
+              <p>
+                Data portability to another service or product provider, upon
+                express request, in accordance with the regulation of the
+                national authority, observing commercial and industrial secrets;
+              </p>
+            </li>
+            <li>
+              <p>
+                Deletion of personal data processed with the consent of the
+                holder - the personal data of the holders will be deleted after
+                the purpose has been fulfilled, except in certain cases:
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    (i) 313X's compliance with legal or regulatory obligations;
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    (ii) transfer to a third party, provided that the data
+                    processing requirements set out in the GDPR are complied
+                    with; or
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    (iii) exclusive use of 313X, its access by a third party
+                    being prohibited, and as long as the data is anonymized.
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                Information on public and private entities with which the
+                controller has shared data use;
+              </p>
+            </li>
+            <li>
+              <p>
+                Information about the possibility of not providing consent and
+                about the consequences of denial;
+              </p>
+            </li>
+            <li>
+              <p>Withdrawal of consent; and</p>
+            </li>
+            <li>
+              <p>Automated Decision Review.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">8. TERMS OF USE AND CONDITIONS</h2>
+          <p>
+            The Terms and Conditions of Use below set out the Users' rights and
+            obligations. It is important to understand the terms below, because
+            in order to use the services of the 313X | TPCRM platform it is
+            necessary that the User agrees with the terms and conditions
+            described herein.
+          </p>
+          <h2 style="font-weight: bold">8.1 Usage Rules</h2>
+          <p>
+            (i) When filling in the requested data and expressly accepting these
+            Terms and Conditions, through the "opt-in" checkbox at the time of
+            registration, the User automatically starts to join and participate
+            in the platform, which implies the total and unrestricted acceptance
+            of these Terms of use. If the User does not agree with any of the
+            provisions contained in this document, he/she may not use the
+            services available on the platform.
+          </p>
+          <p>
+            (ii) 313X reserves the right to use all legal means to identify
+            Users, as well as temporarily or permanently disable the User who
+            presents any information that is not true or that 313X is unable to
+            contact for data verification. When the User's registration is
+            canceled, his access to the use of the 313X | TPCRM platform and to
+            any service will be automatically canceled, not guaranteeing the
+            User, for this reason, any kind of indemnity or reimbursement.
+          </p>
+          <p>
+            (iii) 313X has no responsibility for the accuracy of the
+            information. The feeding is the responsibility of the User, who must
+            guarantee and respond, in any case, for the veracity and accuracy of
+            the data provided.
+          </p>
+          <h2 style="font-weight: bold">8.2 Means of Use</h2>
+          <p>
+            (i) The platform is exclusively accessible via the internet, with no
+            physical installation on the Users' machines. A computer, tablet or
+            smartphone with internet access is required.
+          </p>
+          <p>
+            (ii) The User is exclusively responsible for the purchase,
+            preparation and maintenance of all equipment, as well as Internet
+            access to use the platform.
+          </p>
+          <p>
+            (iii) 313X is exempt from any liability for the lack of connection
+            to the platform and emails made available on the Internet, when the
+            impossibility of access is not caused by its fault or in cases where
+            it has occurred as a result of force majeure events .
+          </p>
+          <p>
+            (iv) The 313X | TPCRM platform is only available to people who have
+            legal capacity, and the user is warned of the legal impositions
+            provided for in articles 166, item I and 171, item I and 180 of the
+            Civil Code. Thus, the User, if an individual, must be over 18 years
+            old, in addition to being fully capable of binding to these Terms
+            and Conditions of Use and accepting and complying with their
+            provisions.
+          </p>
+          <h2 style="font-weight: bold">8.3 Effective Period</h2>
+          <p>
+            (i) The platform is effective for an indefinite period. 313X may
+            terminate, in its sole discretion, any services offered by the 313X
+            | TCRM platform, and may even block your access to any part or all
+            of the services offered at any time, with or without cause or prior
+            notice, and for any reason or reason.
+          </p>
+          <h2 style="font-weight: bold">
+            8.4 Changes in system services and functionalities
+          </h2>
+          <p>
+            (i) 313X may make modifications (updates) to the platform's own
+            services and existing functionalities in order to promote the
+            improvement of the system or its adaptation to a certain legal
+            imposition, without prior notice to Users.
+          </p>
+          <h2 style="font-weight: bold">8.5 Intellectual property</h2>
+          <p>
+            Intellectual Property(i) The commercial use of the expression “313X
+            | TPCRM” as a trademark, company name or domain name, as well as the
+            contents of the screens related to the platform, programs,
+            databases, networks and files, are the property of 313X and are
+            protected by Brazilian laws and international treaties on copyright,
+            trademarks, patents, models and industrial designs. The misuse and
+            total or partial reproduction of said contents are prohibited,
+            unless expressly authorized by the Company.
+          </p>
+          <p>
+            (ii) 313X exclusively owns all intellectual rights to the content
+            contained on the 313X | TPCRM platform, including, without
+            limitation, all rights in the software, titles, patents, trademarks,
+            logos, service models, trade names, design, source code, database,
+            texts, contents, graphics, icons and hyperlinks. By agreeing to
+            these Terms and Conditions of Use, the User will be agreeing not to
+            reproduce or distribute any content on the landing page and the
+            platform, without obtaining and consenting from 313X. The materials
+            are protected by copyright laws and other relevant rules, Brazilian
+            and international intellectual property laws, regulations and
+            applicable laws.
+          </p>
+          <p>
+            (iii) In addition to the limited license to use set forth in these
+            Terms and Conditions of Use, the User shall not have any other
+            right, title or ownership over the Services. The User understands
+            and acknowledges that, under any circumstances, his rights with
+            respect to the Services will be limited by applicable copyright
+            and/or intellectual property laws and by these Terms of Use.
+          </p>
+          <h2 style="font-weight: bold">
+            8.6 Limitations, prohibited activities to the User and other
+            obligations
+          </h2>
+          <p>
+            (i) The User agrees that he will comply with all applicable laws and
+            regulations with respect to the activities set forth in this
+            document, as well as agrees that he will not use the 313X TPCRM
+            platform to perform any type of illegal activity or to take any
+            action that adversely affects the performance of the system, as well
+            as that you will not engage or assist - by intention or omission - a
+            third party for the purpose of:
+          </p>
+          <ul>
+            <li>
+              <p>make any attempt to bypass any security features;</p>
+            </li>
+            <li>
+              <p>
+                violate any law, statute, ordinance or regulation, as well as
+                any intellectual property or privacy right, including, without
+                limitation, patents, copyrights, trademarks or trade secrets of
+                any third parties;
+              </p>
+            </li>
+            <li>
+              <p>
+                publication, creation, storage and/or dissemination of abusive
+                content, such as texts, photos and/or videos that are
+                defamatory, discriminatory, obscene, offensive, threatening,
+                abusive, vexatious, harmful, that contain expressions of hatred
+                against people or groups, or that contains child pornography,
+                graphic or violent pornography, content that may be harmful to
+                minors, that contains religious or racial insults or threats, or
+                that encourages moral (including bodily harm) and property
+                damage, or that may violate any third party rights, notably
+                human rights.
+              </p>
+            </li>
+            <li>
+              <p>
+                reproduce, modify, reverse engineer, publish, duplicate, copy,
+                sell or resell services provided by 313X;
+              </p>
+            </li>
+            <li>
+              <p>
+                disrupt or interfere with the normal operations of the 313X |
+                TPCRM platform, such as the posting or transmission of viruses,
+                the continued posting of repeated material, or the posting of
+                very large, out-of-normal-sized files;
+              </p>
+            </li>
+            <li>
+              <p>
+                use any devices, processes or mechanisms to monitor, retrieve,
+                search or access data from the 313X website or the 313X | TPCRM
+                platform or any material without the prior written consent of
+                313X.
+              </p>
+            </li>
+          </ul>
+          <p>
+            (ii) The User Companies fully agree to assume all risks related to
+            the use of 313X | TPCRM or any submitted materials, including,
+            without limitation, any and all kinds of risk or damage, fully
+            releasing 313X and its companies, partner subsidiaries and
+            affiliates, as well as their directors, legal representatives and
+            employees, against any claims, actions, damages of any kind or
+            nature, resulting from your use of the 313X platform | TPCRM, your
+            submitted materials or any related transactions.
+          </p>
+          <p>
+            (iii) The User understands and acknowledges that by downloading or
+            obtaining any other form of access to our platform by means other
+            than the official application stores or our official website, he
+            will be solely responsible for any damage to his computer or loss of
+            data that results from the download of this material or data.
+          </p>
+          <p>(iv) 313X is not responsible for:</p>
+          <ul>
+            <li>
+              <p>
+                any loss or damage caused by the failure of the employees of the
+                User Companies, as well as any information made available
+                between Users for the provision of services, which fully exempt
+                313X and its other companies from any damage arising from the
+                misuse of information by any User and your employees;
+              </p>
+            </li>
+            <li>
+              <p>
+                any damages resulting from the interruption of access to its
+                products and/or the platform, due to the suspension or
+                interruption caused by the fault of third parties;
+              </p>
+            </li>
+            <li>
+              <p>
+                any documents and files exchanged between Users, under no
+                circumstances, and their content is the sole responsibility of
+                the linked Users, as well as the sender and/or recipient;
+              </p>
+            </li>
+            <li>
+              <p>
+                content provided by Users, nor for errors, slander or
+                defamation, whether written or verbal, omission, falsehood,
+                obscenity, pornography, profanity, danger or inaccuracy of
+                information provided.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">9. GENERAL ARRANGEMENTS</h2>
+          <p>
+            <span style="font-weight: bold">9.1 Competency.</span>These Terms
+            will be governed, interpreted and executed in accordance with the
+            laws of the Federative Republic of Brazil, regardless of the
+            conflicts of these laws with the laws of other states or countries,
+            the Barueri/SP Forum being competent to resolve any doubts arising
+            from this instrument.
+          </p>
+          <p>
+            <span style="font-weight: bold">9.2 Terms Changes. </span> 313X may
+            modify, at any time, the Privacy Policy and the Terms and Conditions
+            of Use of the Platform, aiming at its improvement and correspondence
+            with the services provided or to meet legal, administrative or
+            judicial orders. Therefore, we recommend that you periodically visit
+            this page so that you are aware of the changes made.
+          </p>
+          <p style="font-weight: bold">9.3 Contact information.</p>
+          <ul>
+            <li>
+              <p style="font-weight: bold">Controller Data:</p>
+              <p>
+                Company Name: 313X SERVICO DE SEGURANCA E INTELLIGÊNCIA
+                CIBERNÉTICA LTDA
+              </p>
+              <p>CNPJ: 30.221.177/0001-89</p>
+              <p>Address: Alameda Grajaú, n. 60, Alphaville, Barueri/SP</p>
+              <p>
+                E-mail: <span class="text-orange">contato@313x.com.br</span>
+              </p>
+            </li>
+            <li>
+              <p style="font-weight: bold">Person in Charge:</p>
+              <p>Name: Sara Spigariol</p>
+              <p>E-mail: <span class="text-orange">sara@313x.com.br</span></p>
+            </li>
+          </ul>
+          <p>
+            It is up to the User to decide whether or not to proceed with the
+            use of the 313X | TPCRM. If the User does not agree with the
+            changes, he/she must stop using the platform and the services
+            offered therein.
+          </p>
+          <p>
+            This Privacy Policy was last updated and revised on March 10, 2022.
+          </p>
+        </div>
+      </section>
+      <section class="footer-section" id="contact">
+        <div class="trusted">
+          <div>
+            <div class="footer-wrapper">
+              <div class="company-footer">
+                <a href="./index-en.html" class="company-header">Company</a>
+                <div class="company-wrapper">
+                  <a class="solutions-text" href="./index-en.html#about"
+                    >About 313X</a
+                  >
+                  <a class="solutions-text" href="./index-en.html#incident"
+                    >Full Cycle of Incident Management</a
+                  >
+                  <a class="solutions-text" href="./index-en.html#industries"
+                    >Industries</a
+                  >
+                  <a class="solutions-text" href="#contact">Contact Us</a>
+                </div>
+              </div>
+              <div class="solutions-footer">
+                <a href="./Prevention.html" class="solutions-header"
+                  >Prevention</a
+                >
+                <div class="solutions-wrapper">
+                  <a class="prevention-text" href="./Prevention.html#security"
+                    >Security Assessment</a
+                  >
+                  <a class="prevention-text" href="./Prevention.html#pentest"
+                    >Penetration Testing</a
+                  >
+                  <a class="prevention-text" href="./Prevention.html#redTeaming"
+                    >Red Teaming</a
+                  >
+                  <a class="prevention-text" href="./Prevention.html#consulting"
+                    >Consulting and Compliance Audit</a
+                  >
+                </div>
+              </div>
+              <div class="services-footer">
+                <a href="./ResponseInvestigation.html" class="services-header"
+                  >Response & Investigation</a
+                >
+                <div class="services-wrapper">
+                  <a
+                    class="prevention-text"
+                    href="./ResponseInvestigation.html#IncidentResponse"
+                    >Incident Response</a
+                  >
+                  <a
+                    class="prevention-text"
+                    href="./ResponseInvestigation.html#incidentInvestigation"
+                    >Cyber Investigation</a
+                  >
+                  <a
+                    class="prevention-text"
+                    href="./ResponseInvestigation.html#malware"
+                    >Digital Forensics and Malware Analysis</a
+                  >
+                </div>
+              </div>
+              <div class="products-footer">
+                <a class="products-header" href="./Products.html">Products</a>
+                <div class="services-wrapper">
+                  <a class="prevention-text" href="./Products.html#why313"
+                    >Why 313X | TPCRM</a
+                  >
+                  <a class="prevention-text" href="./Products.html#313cases"
+                    >313X | TPCRM use cases</a
+                  >
+                  <a class="prevention-text" href="./Products.html#empower"
+                    >Empower your Cybersecurity
+                  </a>
+                </div>
+              </div>
+
+              <div class="lang-footer">
+                <div>
+                  <svg
+                    class="globe-footer"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <a class="lang-text-footer" href="./PrivacyPolicy.html"
+                    >Português</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="logo-footer">
+              <div class="img-footer-wrapper">
+                <div class="policy-wrapper">
+                  <!--<img class="linkedin-logo" src="./img/linkedin.png" />-->
+                  <a
+                    href="https://www.linkedin.com/company/313xcybersecurity/"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                      class="linkedin-logo"
+                    >
+                      <path
+                        fill="white"
+                        d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                        class=""
+                      ></path>
+                    </svg>
+                  </a>
+                  <div class="policy-saas-wrapper">
+                    <a href="./PrivacyPolicy-en.html"
+                      ><p class="saas">Privacy Policy</p></a
+                    >
+                    <a href="./Saas-en.html"
+                      ><p class="policy">SaaS License Agreement</p></a
+                    >
+                  </div>
+                </div>
+                <div class="logoImg-wrapper">
+                  <img
+                    class="logoImg-footer"
+                    src="./img/313footer.png"
+                    alt="313x logo footer"
+                  />
+                </div>
+              </div>
+              <div class="span-rights">
+                <span class="rights-reserved"
+                  >2022 313X - All rights reserved</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+      function openDivNavbar() {
+        if (document.getElementById('navbar-sm').style.display === 'none') {
+          document.getElementById('navbar-sm').style.display = 'block';
+        } else {
+          document.getElementById('navbar-sm').style.display = 'none';
+        }
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>313X - Cyber Investigations & Disputes</title>
+    <link rel="icon" type="image/x-icon" href="./img/313Fav.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=PT+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        line-height: 1.6;
+        color: #081824;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 1px;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+
+      a:visited {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      a:active {
+        text-decoration: none;
+      }
+      li {
+        line-height: 1.3;
+      }
+      .home {
+        width: 100%;
+        height: 100%;
+        /* CSS Smooth Scroll */
+        overflow-y: visible;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        font-size: 20px;
+      }
+      section {
+        width: 100%;
+        height: auto;
+        /* Scroll Snap */
+        scroll-snap-align: center;
+      }
+      .homePage {
+        background-color: #081824;
+        background-image: url('./img/mock313opacidadeon.png');
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: contain;
+        padding: 150px;
+        height: 100vh;
+      }
+      #homePage2 {
+        background-color: #081824;
+        height: 100vh;
+      }
+      .navBar {
+        margin-bottom: 200px;
+        position: fixed;
+        background-color: #081824;
+        width: 100%;
+        padding-top: 20px;
+        z-index: 10;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 145px;
+        padding-right: 150px;
+      }
+      .logo {
+        height: 7vh;
+      }
+      .items {
+        align-self: center;
+        display: flex;
+        align-items: baseline;
+      }
+      .items-nav {
+        font-size: 20px;
+        color: #808080;
+        cursor: pointer;
+      }
+      .items-nav:hover {
+        color: white;
+      }
+
+      .arrow-down {
+        height: 30px;
+        width: 30px;
+        display: none;
+      }
+      /* .wrapper-items-nav {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+      } */
+
+      .dropdown-company,
+      .dropdown-prevention,
+      .dropdown-responseInvestigation,
+      .dropdown-products,
+      .dropdown-lang {
+        display: none;
+        position: absolute;
+        background-color: #081824;
+        min-width: 160px;
+        padding: 12px 16px;
+        z-index: 1;
+        border-radius: 5px;
+        color: white;
+      }
+      .company,
+      .solutions,
+      .prevention,
+      .products,
+      .responseInvestigation {
+        margin-right: 30px;
+      }
+      #company {
+        border-bottom: solid #fba32e;
+        padding-bottom: 10px;
+      }
+      .company:hover .dropdown-company,
+      .company:hover .arrow-up,
+      .company:hover .arrow-down {
+        display: block;
+      }
+      .responseInvestigation:hover .dropdown-responseInvestigation {
+        display: block;
+      }
+      .solutions:hover .dropdown-solutions,
+      .solutions:hover .arrow-up {
+        display: block;
+      }
+      .prevention:hover .dropdown-prevention,
+      .prevention:hover .arrow-up {
+        display: block;
+      }
+      .products:hover .dropdown-products,
+      .products:hover .arrow-up {
+        display: block;
+      }
+      .lang:hover .dropdown-lang {
+        display: block;
+      }
+
+      .contactUs {
+        color: #081824;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #fba32e;
+        padding: 5px 20px 5px 20px;
+      }
+      .contactUs:hover {
+        color: white;
+      }
+      .subTitleBig {
+        font-size: 50px;
+        color: white;
+        font-weight: regular;
+        text-align: left;
+        font-family: 'PT Sans', sans-serif;
+        letter-spacing: 2px;
+      }
+      .subTitle {
+        font-size: 30px;
+        color: white;
+      }
+      .subTitle-about {
+        font-size: 30px;
+        color: #081824;
+        padding-left: 10px;
+        font-weight: normal;
+      }
+      .header {
+        margin-bottom: 120px;
+      }
+      .buttonsHome {
+        display: flex;
+        justify-content: start;
+      }
+      .buttons-cases {
+        display: flex;
+        justify-content: center;
+        padding-top: 100px;
+      }
+      .letsTalkBtn {
+        padding: 10px;
+        width: 170px;
+        background-color: white;
+        color: #081824;
+        border: solid 1px #081824;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .servicesBtn {
+        padding: 10px;
+        width: 170px;
+        background-color: #081824;
+        color: white;
+        border: solid 1px white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .aboutBtn {
+        padding: 10px;
+        width: 170px;
+        background-color: #fba32e;
+        color: #081824;
+        border: solid 1px #fba32e;
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .aboutBtn:hover,
+      .servicesBtn:hover,
+      .letsTalkBtn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .items-dropdown {
+        color: white;
+        display: block;
+        cursor: pointer;
+        font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .items-dropdown:hover {
+        color: #fba32e;
+      }
+      .page1-notSelected {
+        display: none;
+        margin-right: 10px;
+      }
+      .page2-selected {
+        display: none;
+      }
+      .page2-notSelected {
+        margin-left: 10px;
+      }
+      .page1-notSelected,
+      .page2-notSelected {
+        width: 20px;
+        height: 20px;
+        background-color: #eeebea;
+        border-radius: 50%;
+
+        cursor: pointer;
+      }
+      .page1-selected,
+      .page2-selected {
+        width: 20px;
+        height: 20px;
+        background-color: #fba32e;
+        border-radius: 50%;
+      }
+      .aboutDiv-wrapper {
+        display: flex;
+        padding: 100px 200px 100px 150px;
+        justify-content: center;
+      }
+      .carousel-control-next,
+      .carousel-control-prev {
+        width: 5% !important;
+      }
+      .about-LR-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .logoAbout {
+        width: 100px;
+        height: 43px;
+        align-self: center;
+        margin-left: 5px;
+      }
+      .about-header {
+        color: #fba32e;
+        font-weight: bold;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      .about-wrapper {
+        display: flex;
+        margin-bottom: 40px;
+      }
+      .about-text {
+        font-size: 50px;
+        font-family: 'PT Sans', sans-serif;
+        margin-bottom: 5px;
+      }
+      .about-left {
+        padding: 0px 100px 0px 0px;
+      }
+      .checkVendorSVG {
+        height: 40px;
+        width: 30px;
+        color: red;
+      }
+      .contactUsBig {
+        color: white;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #006c67;
+        padding: 20px 40px 20px 40px;
+        transition: all 0.2s;
+      }
+      .contactUsBig:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        color: #081824;
+      }
+
+      .about-1,
+      .about-2,
+      .about-3 {
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+      .about-list {
+        font-size: 20px;
+        padding-left: 40px;
+      }
+      .vendor-wrapper {
+        display: flex;
+        padding-bottom: 10px;
+      }
+      .plans-wrapper {
+        padding: 200px 200px 50px 200px;
+      }
+      .selection-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 100px;
+      }
+      .selection-header {
+        font-size: 50px;
+
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: 'PT Sans', sans-serif;
+      }
+      .selection-text {
+        color: #081824;
+        font-size: 18px;
+        font-weight: regular;
+        text-align: center;
+      }
+      .plan-header {
+        font-size: 30px;
+        font-weight: regular;
+        text-align: center;
+        font-family: 'PT Sans', sans-serif;
+      }
+      .plan-text-wrapper {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        color: #081824;
+        font-weight: light;
+      }
+      .plan-learn {
+        text-align: center;
+        color: #fba32e;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      .incident {
+        margin-bottom: 50px;
+      }
+      .industries-bigWrapper {
+        padding: 100px 150px 100px 150px;
+      }
+      .cases-wrapper {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 40%;
+        align-self: center;
+      }
+      .mock-img {
+        width: 60%;
+        align-self: center;
+      }
+      .empower-wrapper {
+        padding: 150px;
+      }
+      .cases-bigWrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .cases-selection {
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      .cases-selection-wrapper {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+      }
+
+      .mock313 {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+      #supplyChain {
+        color: #fba32e;
+        border-bottom: solid #fba32e;
+      }
+      #divEnterprise,
+      #divMerges {
+        display: none;
+      }
+      .list-supplyChain {
+        padding-bottom: 10px;
+      }
+      .cases-title {
+        font-size: 50px;
+        font-family: 'PT Sans', sans-serif;
+        color: white;
+        text-align: left;
+      }
+      .industries-subtitle-wrapper {
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+      }
+      .industries-img {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+      }
+      .industries-img2 {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+      }
+      .industries-subtitle {
+        font-size: 30px;
+        color: white;
+      }
+      .industries-text {
+        font-size: 20px;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .accordion-button:not(.collapsed) {
+        color: white;
+        background-color: #081824;
+        box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+        border-bottom: solid 1px #fba32e;
+        color: #fba32e;
+      }
+      .accordion-item {
+        background-color: #081824;
+        color: white;
+        border: 0px;
+      }
+      .accordion-button {
+        background-color: #081824;
+        color: white;
+        border-bottom: solid 1px;
+        font-size: 30px;
+      }
+      .accordion-button:after {
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+      }
+      .trusted {
+        padding-top: 100px;
+        background: #eeebea;
+      }
+      .div-contactUs {
+        text-align: center;
+        padding: 100px;
+      }
+      .contactUs-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 50px 115px 50px 0px;
+      }
+      .contactUs-header {
+        font-size: 50px;
+        color: #081824;
+        font-weight: bold;
+        font-family: 'PT Sans', sans-serif;
+      }
+
+      .phone-header,
+      .email-header,
+      .headquarters-header {
+        font-size: 30px;
+        color: #fba32e;
+        font-weight: bold;
+      }
+      .phone-text,
+      .email-text,
+      .headquarters-text {
+        color: #081824;
+        font-size: 30px;
+      }
+
+      .trusted-wrapper {
+        text-align: center;
+      }
+      .trusted-img {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 150px;
+      }
+      .trusted-header {
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: white;
+        font-weight: bold;
+      }
+      .escudo1 {
+        height: 150px;
+        width: 150px;
+        margin-right: 30px;
+      }
+      .escudo2 {
+        height: 150px;
+        width: 150px;
+        margin-right: 30px;
+        margin-left: 30px;
+      }
+      .escudo3 {
+        height: 150px;
+        width: 150px;
+        margin-left: 30px;
+      }
+      .footer-section {
+        background-image: url('./img/fundo.png');
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover;
+        font-size: 16px;
+      }
+      .arrowUp {
+        height: 80px;
+        width: 100px;
+        color: #fba32e;
+        margin-bottom: 100px;
+      }
+      .footer-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        background: #081824;
+        padding: 100px 0px 100px 65px;
+        font-size: 16px;
+      }
+      .services-wrapper,
+      .solutions-wrapper,
+      .products-wrapper,
+      .company-wrapper {
+        display: grid;
+        color: rgb(206, 204, 204);
+        padding: 5px;
+      }
+      .services-header,
+      .products-header,
+      .solutions-header,
+      .company-header {
+        font-size: 30px;
+        color: white;
+      }
+      .services-header:hover,
+      .products-header:hover,
+      .solutions-header:hover,
+      .company-header:hover {
+        color: white;
+      }
+      .solutions-text,
+      .prevention-text,
+      .products-text {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: white;
+      }
+      .solutions-text:hover,
+      .prevention-text:hover,
+      .products-text:hover {
+        color: #fba32e;
+        cursor: pointer;
+      }
+
+      .rights-reserved {
+        font-size: 10px;
+        text-align: right;
+        padding-right: 25px;
+        color: white;
+      }
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+      .navbar-sm {
+        display: none;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .header-sm {
+        display: none;
+      }
+      .lang-footer {
+        display: none;
+      }
+      .logo-footer {
+        background-color: #081824;
+        padding-left: 195px;
+        padding-right: 106px;
+        padding-bottom: 20px;
+      }
+      .img-footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+      }
+      .policy-wrapper {
+        display: flex;
+      }
+      .linkedin-logo {
+        height: 4vh;
+      }
+      .saas {
+        padding-right: 20px;
+        padding-left: 20px;
+        color: white;
+      }
+      .policy {
+        color: white;
+      }
+
+      .policy:hover,
+      .saas:hover {
+        color: #fba32e;
+      }
+
+      .policy-saas-wrapper {
+        display: flex;
+        align-items: end;
+      }
+      .logoImg-footer {
+        height: 5vh;
+        align-self: flex-end;
+      }
+      .span-rights {
+        text-align: end;
+      }
+
+      @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        p {
+          font-size: 12px;
+        }
+        .homePage {
+          padding: 0px;
+        }
+
+        .navbar-sm {
+          margin-bottom: 200px;
+          position: fixed;
+          background-color: #081824;
+          width: 100%;
+          padding-top: 20px;
+          padding-left: 20px;
+        }
+        .hamburger {
+          display: block;
+          align-self: center;
+          height: 60px;
+        }
+        .items {
+          display: none;
+        }
+        .hamburger-icon {
+          height: 50px;
+          width: 50px;
+          color: #fba32e;
+          text-align: right;
+        }
+        .nav {
+          display: flex;
+          justify-content: space-between;
+          padding-left: 30px;
+          padding-right: 30px;
+          align-items: center;
+        }
+        .logo {
+          height: 5vh;
+          align-self: center;
+        }
+        .items-nav {
+          padding-bottom: 5px;
+        }
+        .subTitleBig {
+          font-size: 32px;
+          color: white;
+          font-weight: regular;
+          text-align: left;
+          font-family: 'PT Sans', sans-serif;
+          letter-spacing: 2px;
+        }
+        .subTitle {
+          font-size: 18px;
+          color: rgb(206, 204, 204);
+          text-align: left;
+          padding: 0px;
+        }
+        .subTitle-about {
+          font-size: 18px;
+          color: #081824;
+          padding-left: 0px;
+        }
+        .header-sm {
+          display: block;
+          padding: 12vh 30px 12vh 30px;
+        }
+        #homePage2 {
+          background-color: #081824;
+          padding: 20vh 0px 20vh 0px;
+        }
+        .header {
+          display: none;
+        }
+        .buttonsHome {
+          padding: 0px 10px 50px 10px;
+          justify-content: center;
+        }
+        .letsTalkBtn {
+          padding: 5px;
+          width: 150px;
+        }
+        .servicesBtn {
+          padding: 5px;
+          width: 150px;
+          background-color: #081824;
+          color: white;
+          border: solid 1px white;
+          font-size: 18px;
+          font-weight: bold;
+          margin-right: 10px;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .aboutBtn {
+          padding: 5px;
+          width: 150px;
+          background-color: #fba32e;
+          color: #081824;
+          border: solid 1px #fba32e;
+          font-size: 18px;
+          font-weight: bold;
+          margin-left: 10px;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .about-text {
+          font-size: 32px;
+        }
+        .about-header {
+          color: #fba32e;
+          font-weight: bold;
+          font-size: 30px;
+          margin-top: 50px;
+          margin-bottom: 50px;
+          padding: 0px 20px 0px 20px;
+        }
+        .about-wrapper {
+          display: block;
+          margin-bottom: 40px;
+          margin-left: 20px;
+        }
+        .about-LR-wrapper {
+          display: block;
+        }
+        .vendor-wrapper {
+          display: block;
+          padding-bottom: 10px;
+          text-align: center;
+        }
+        .about-left {
+          padding: 0px;
+        }
+        .about-right {
+          margin-top: 60px;
+        }
+        .aboutDiv-wrapper {
+          display: block;
+          padding: 30px;
+          justify-content: center;
+          padding-bottom: 60px;
+        }
+        .accordion-button {
+          font-size: 18px;
+        }
+        .about-1,
+        .about-2,
+        .about-3 {
+          font-size: 15px;
+          padding: 10px 20px 10px 20px;
+        }
+        .industries-bigWrapper {
+          padding: 30px;
+        }
+        .cases-bigWrapper {
+          display: block;
+        }
+        .cases-wrapper {
+          padding-top: 0px;
+          padding-bottom: 50px;
+          width: 100%;
+          align-self: center;
+        }
+        .cases-title {
+          font-size: 32px;
+        }
+        .mock-img {
+          display: none;
+        }
+        .empower-wrapper {
+          padding: 30px;
+        }
+        .selection-header {
+          font-size: 30px;
+
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .plans-wrapper {
+          padding: 0px;
+        }
+        .selections {
+          padding: 20px;
+        }
+        .selection-div {
+          width: auto;
+          margin: 50px 20px 50px 20px;
+        }
+        .selection-wrapper {
+          display: block;
+
+          padding: 50px 20px 50px 20px;
+        }
+        .escudo1 {
+          height: 50px;
+          width: 50px;
+          margin-right: 20px;
+        }
+        .escudo2 {
+          height: 50px;
+          width: 50px;
+          margin-right: 20px;
+          margin-left: 20px;
+        }
+        .escudo3 {
+          height: 50px;
+          width: 50px;
+          margin-left: 20px;
+        }
+        .solutions-footer,
+        .services-footer,
+        .products-footer,
+        .company-footer {
+          display: none;
+        }
+        .div-contactUs {
+          text-align: center;
+          padding: 20px;
+        }
+        .contactUs-wrapper {
+          display: block;
+          margin: 50px 0px 50px 0px;
+        }
+        .contactUs-header {
+          font-size: 30px;
+          color: white;
+          font-weight: bold;
+          padding-left: 0px;
+        }
+        .contact-headquarters,
+        .contact-email,
+        .contact-phone {
+          padding: 40px 0px 40px 0px;
+        }
+        .rights-reserved {
+          padding-right: 0px;
+          padding-left: 10px;
+          padding-top: 20px;
+          text-align: center;
+        }
+        .globe-footer {
+          color: #808080;
+          height: 35px;
+          padding-right: 5px;
+          color: #fba32e;
+        }
+
+        .lang-text-footer {
+          font-size: 12px;
+          color: #eeebea;
+        }
+        .footer-wrapper {
+          display: block;
+          text-align: center;
+          color: white;
+          background: #081824;
+          padding: 50px 0px 50px 0px;
+        }
+        .lang-footer {
+          display: block;
+          justify-content: center;
+          align-items: center;
+          padding-left: 0px;
+          justify-content: center;
+        }
+        .logo-footer {
+          background-color: #081824;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-bottom: 20px;
+        }
+        .img-footer-wrapper {
+          display: block;
+          color: white;
+        }
+        .policy-wrapper {
+          display: block;
+          text-align: center;
+        }
+        .linkedin-logo {
+          height: 5vh;
+          padding-left: 0px;
+          margin-bottom: 20px;
+        }
+        .policy-saas-wrapper {
+          display: block;
+          align-items: center;
+          padding-bottom: 50px;
+        }
+        .logoImg-wrapper {
+          text-align: center;
+        }
+        .logoImg-footer {
+          height: 5vh;
+          align-self: center;
+        }
+        .span-rights {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navBar">
+      <nav>
+        <div class="nav">
+          <div style="padding-bottom: 10px">
+            <a href="./index-en.html">
+              <img
+                class="logo animated fadeInLeft"
+                src="./img/313logo.png "
+                alt="313x logo"
+              />
+            </a>
+          </div>
+          <div class="hamburger animated fadeInRight">
+            <svg
+              onclick="openDivNavbar()"
+              xmlns="http://www.w3.org/2000/svg"
+              class="hamburger-icon"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+
+          <div class="items">
+            <div class="company">
+              <a class="items-nav" href="./index-en.html">Company</a>
+
+              <!-- <div
+                class="arrow-up animate__animated animate__fadeIn"
+              ></div> -->
+              <div class="dropdown-company animated fadeIn">
+                <a class="items-dropdown" href="./index-en.html#about"
+                  >About 313x</a
+                >
+                <a class="items-dropdown" href="./index-en.html#incident"
+                  >Full Cycle of Incident Management</a
+                >
+                <a class="items-dropdown" href="./index-en.html#industries"
+                  >Industries</a
+                >
+                <a class="items-dropdown" href="./index-en.html#contact"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+            <div class="prevention">
+              <a class="items-nav" href="./Prevention.html">Prevention</a>
+              <div class="dropdown-prevention animated fadeIn">
+                <a class="items-dropdown" href="./Prevention.html#security"
+                  >Security Assessment</a
+                >
+                <a class="items-dropdown" href="./Prevention.html#pentest"
+                  >Penetration Testing</a
+                >
+                <a class="items-dropdown" href="./Prevention.html#redTeaming"
+                  >Red Teaming</a
+                >
+                <a class="items-dropdown" href="./Prevention.html#consulting"
+                  >Consulting and Compliance Audit</a
+                >
+              </div>
+            </div>
+            <div class="responseInvestigation">
+              <a class="items-nav" href="./ResponseInvestigation.html"
+                >Response & Investigation</a
+              >
+              <div class="dropdown-responseInvestigation animated fadeIn">
+                <a
+                  class="items-dropdown"
+                  href="./ResponseInvestigation.html#IncidentResponse"
+                  >Incident Response</a
+                >
+                <a
+                  class="items-dropdown"
+                  href="./ResponseInvestigation.html#incidentInvestigation"
+                  >Cyber Investigation</a
+                >
+                <a
+                  class="items-dropdown"
+                  href="./ResponseInvestigation.html#malware"
+                  >Digital Forensics and Malware Analysis</a
+                >
+              </div>
+            </div>
+
+            <div class="products" id="company">
+              <a class="items-nav" href="./Products.html">Products</a>
+              <div class="dropdown-products animated fadeIn">
+                <a class="items-dropdown" href="./Products.html#why313"
+                  >Why 313X | TPCRM</a
+                >
+                <a class="items-dropdown" href="./Products.html#313cases"
+                  >313X | TPCRM use cases</a
+                >
+                <a class="items-dropdown" href="./Products.html#empower"
+                  >Empower your Cybersecurity
+                </a>
+              </div>
+            </div>
+            <div style="display: flex">
+              <a
+                class="contactUs"
+                href="./index-en.html#contact"
+                style="font-size: 16px"
+                >Contact Us</a
+              >
+              <div
+                style="padding-left: 20px; justify-content: center"
+                class="lang"
+              >
+                <svg
+                  class="items-nav"
+                  style="color: #808080; height: 35px"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                  ></path>
+                </svg>
+                <div class="dropdown-lang animated fadeIn">
+                  <a class="items-dropdown" href="./Produtos.html">Português</a>
+                  <a class="items-dropdown" href="./Products.html">English</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-sm animated fadeIn" id="navbar-sm">
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./index-en.html">Company</a>
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./Prevention.html">Prevention</a>
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./ResponseInvestigation.html"
+              >Response & Investigation</a
+            >
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./Products.html">Products</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="home">
+      <section>
+        <div
+          id="carouselExampleFade"
+          class="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <section class="homePage" id="homePage">
+                <div>
+                  <div style="padding-top: 10vh">
+                    <div class="header">
+                      <h1 class="subTitleBig wow fadeIn">
+                        313X | Third-Party Cyber Risk Management
+                      </h1>
+                      <h2 class="subTitle wow fadeIn">
+                        Cybersecurity ratings and insights that make it easy to
+                        understand and act on your risks.
+                      </h2>
+                    </div>
+                    <div class="header-sm">
+                      <h1 class="subTitleBig wow fadeIn">
+                        313X | Third-Party Cyber Risk Management
+                      </h1>
+
+                      <h2 class="subTitle wow fadeIn" data-wow-delay="0.2s">
+                        Cybersecurity ratings and insights that make it easy to
+                        understand and act on your risks.
+                      </h2>
+                    </div>
+                    <div class="buttonsHome">
+                      <a href="./Products.html#why313">
+                        <button
+                          class="servicesBtn wow fadeInLeft"
+                          data-wow-delay="0.5s"
+                        >
+                          About
+                        </button>
+                      </a>
+                      <a href="https://tpcrm.313x.com.br" target="_blank">
+                        <button
+                          class="aboutBtn wow fadeInRight"
+                          data-wow-delay="0.5s"
+                        >
+                          Sign In
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="carousel-item">
+              <div id="homePage2">
+                <img
+                  class="mock313"
+                  src="./img/mock313opacidadeoff.png"
+                  alt="computer background"
+                />
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <section id="why313">
+        <div class="aboutDiv-wrapper" id="about">
+          <div>
+            <div class="why313-wrapper" style="margin-bottom: 60px">
+              <h1 class="about-text" style="margin-bottom: 10px">
+                Why 313X | TPCRM?
+              </h1>
+              <h2 class="subTitle" style="color: #fba32e; padding-bottom: 20px">
+                You can't protect what you can't see.
+              </h2>
+              <p style="color: #081824">
+                Your enterprise relies on third parties to fulfill essential
+                services. You also count on them to protect the security of the
+                data and the availability of the services with which they are
+                entrusted. 313X | TPCRM provides you comprehensive vendor
+                security monitoring, making it easy for you to understand your
+                risks and enabling you to efficiently engage with your vendors
+                to take action on the risks to achieve good risk outcomes.
+              </p>
+            </div>
+            <div class="about-LR-wrapper">
+              <div class="about-left">
+                <div style="padding-bottom: 60px">
+                  <div class="vendor-wrapper">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      style="height: 50px; color: #006c67"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      />
+                    </svg>
+                    <h3 class="subTitle-about">
+                      Make Better Informed Vendor Selections
+                    </h3>
+                  </div>
+                  <p>
+                    It’s your risk, so you have to select vendors that are going
+                    to protect your risk interests well. 313X enhances your new
+                    vendor selection process by providing you readily available
+                    objective assessments for each of the parties you are
+                    evaluating. Get the intimate risk performance assessments
+                    you need to efficiently manage your third-party risk and
+                    compare the overall vendor ratings, or dive into the details
+                    to a better and immersive comprehention. Either way, you are
+                    making better decisions. And you are doing it faster - at
+                    the speed of business.
+                  </p>
+                </div>
+                <div>
+                  <div class="vendor-wrapper">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      style="height: 50px; color: #006c67"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                      />
+                    </svg>
+                    <h3 class="subTitle-about">
+                      Conduct Assessments More Efficiently
+                    </h3>
+                  </div>
+                  <p>
+                    When your analyst engages with a third-party, they need to
+                    get the job done well and quickly, because there are
+                    mountains of others to assess. 313X | TPCRM enables your
+                    analysts to engage with vendors more efficiently, providing
+                    the IT environment details and objective cybersecurity
+                    assessment before they even engage. If their questionnaire
+                    responses look good, and the 313X | TPCRM assessment looks
+                    clean, you have a strong basis for wrapping the assessment
+                    quickly. And where 313X | TPCRM calls out issues, your
+                    analysts know the areas on which to focus.
+                  </p>
+                </div>
+              </div>
+              <div class="about-right">
+                <div style="padding-bottom: 60px">
+                  <div class="vendor-wrapper">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      style="height: 50px; color: #006c67"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"
+                      />
+                    </svg>
+                    <h3 class="subTitle-about">
+                      Prioritize Your Vendor Portfolio
+                    </h3>
+                  </div>
+                  <p>
+                    So many vendors to assess, yet so few resources to get the
+                    job done. 313X | TPCRM provides you data-driven insights
+                    that enable you to more intelligently prioritize your vendor
+                    risk assessments and better manage your third-party risk
+                    assessment priorities better. With 313X | TPCRM performance
+                    ratings, you have a strong indicator of vendor performance,
+                    enabling you to prioritize assessment resources towards the
+                    lower performing vendors and away from the high performing
+                    vendors.
+                  </p>
+                </div>
+                <div>
+                  <div class="vendor-wrapper">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      style="height: 50px; color: #006c67"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
+                      />
+                    </svg>
+                    <h3 class="subTitle-about">Realize Better Risk Outcomes</h3>
+                  </div>
+                  <p>
+                    Performing third-party assessments without objective data
+                    puts you at a huge disadvantage, leaving you only the
+                    ability to review unsubstantiated questionnaire answers.
+                    313X | TPCRM objectively verifies vendor cybersecurity risk
+                    performance, enabling your analysts to see how well your
+                    vendors actually implement and operate their risk management
+                    program. Deeper transparency yields greater accountability
+                    which produces better risk outcomes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-bottom: 100px">
+          <a
+            class="contactUsBig"
+            href="https://tpcrm.313x.com.br"
+            target="_blank"
+            >Free Trial</a
+          >
+        </div>
+      </section>
+      <section style="background-color: #081824; height: auto" id="313cases">
+        <div class="industries-bigWrapper">
+          <div>
+            <h1 class="cases-title">313X | TPCRM use cases</h1>
+          </div>
+          <div class="cases-bigWrapper">
+            <div class="cases-wrapper">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Supply Chain Risk Management
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <p style="padding-bottom: 20px">
+                        Leverage 313X | TPCRM powerful technology to gain
+                        visibility beyond third-party risk and:
+                      </p>
+                      <ul>
+                        <li class="list-supplyChain">
+                          <p>
+                            Automatically pinpoint and prioritize extended
+                            supply chain risk
+                          </p>
+                        </li>
+                        <li class="list-supplyChain">
+                          <p>
+                            Minimize effort required to research and understand
+                            supply chain risk
+                          </p>
+                        </li>
+                        <li class="list-supplyChain">
+                          <p>
+                            Improve visibility and reporting of security risk
+                            throughout the organization
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Enterprise Risk Management
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <p style="padding-bottom: 20px">
+                        Gain full insight into your enterprise's IT landscape
+                        through a:
+                      </p>
+                      <ul>
+                        <li class="list-supplyChain">
+                          <p>
+                            Benchmark of your enterprise across cybersecurity
+                            and IT profiles, dramatically enhancing your CISO
+                            and CIO board reporting
+                          </p>
+                        </li>
+                        <li class="list-supplyChain">
+                          <p>
+                            Combined with 313X | TPCRM ability to automatically
+                            determine asset value at risk, better manage of your
+                            IT and security profile, so your teams can easily
+                            identify issues, prioritize response and act
+                            efficiently
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Merges and Acquisitions
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <p style="padding-bottom: 20px">
+                        313X | TPCRM powerful software can help you to mitigate
+                        risk during the M&A process and:
+                      </p>
+                      <ul>
+                        <li class="list-supplyChain">
+                          <p>
+                            Use cyber risk rating information to understand the
+                            acquisition's IT environment
+                          </p>
+                        </li>
+
+                        <li class="list-supplyChain">
+                          <p>
+                            Know how well your acquisition is inventorying and
+                            managing digital systems
+                          </p>
+                        </li>
+                        <li class="list-supplyChain">
+                          <p>
+                            Objectively assess the acquisition’s information
+                            security posture
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mock-img" style="width: 60%; align-self: center">
+              <img
+                class="mock313"
+                src="./img/mock313opacidadeoff.png"
+                alt="computer background"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="empower">
+        <div class="empower-wrapper">
+          <h1 class="subTitleBig" style="color: #081824; text-align: center">
+            Empower your Cybersecurity Management
+          </h1>
+          <h2
+            class="subTitle"
+            style="color: #081824; text-align: center; font-weight: normal"
+          >
+            313X | TPCRM maximizes your efficiency with continuous, automated
+            assessment and tracking.
+          </h2>
+          <div class="buttons-cases">
+            <a href="./index-en.html#contact">
+              <button class="letsTalkBtn wow fadeInLeft">Let's Talk</button>
+            </a>
+            <a href="https://tpcrm.313x.com.br/" target="blank">
+              <button class="aboutBtn wow fadeInRight">Free Trial</button>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="footer-section" id="contact">
+        <!-- <div class="trusted-wrapper" id="contact">
+            <div>
+              <p class="trusted-header wow fadeIn">Trusted By</p>
+            </div>
+            <div class="trusted-img">
+              <img
+                class="escudo1 wow slideInUp"
+                data-wow-delay="0.3s"
+                src="./img/police.png"
+              />
+              <img
+                class="escudo2 wow slideInUp"
+                data-wow-delay="0.2s"
+                src="./img/pirate.png"
+              />
+              <img
+                class="escudo3 wow slideInUp"
+                data-wow-delay="0.4s"
+                src="./img/badge.png"
+              />
+            </div>
+          </div> -->
+
+        <div>
+          <div class="footer-wrapper">
+            <div class="company-footer">
+              <a href="./index-en.html" class="company-header">Company</a>
+              <div class="company-wrapper">
+                <a class="solutions-text" href="./index-en.html#about"
+                  >About 313X</a
+                >
+                <a class="solutions-text" href="./index-en.html#incident"
+                  >Full Cycle of Incident Management</a
+                >
+                <a class="solutions-text" href="./index-en.html#industries"
+                  >Industries</a
+                >
+                <a class="solutions-text" href="./index-en.html#contact"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+            <div class="solutions-footer">
+              <a href="./Prevention.html" class="solutions-header"
+                >Prevention</a
+              >
+              <div class="solutions-wrapper">
+                <a class="prevention-text" href="./Prevention.html#security"
+                  >Security Assessment</a
+                >
+                <a class="prevention-text" href="./Prevention.html#pentest"
+                  >Penetration Testing</a
+                >
+                <a class="prevention-text" href="./Prevention.html#redTeaming"
+                  >Red Teaming</a
+                >
+                <a class="prevention-text" href="./Prevention.html#consulting"
+                  >Consulting and Compliance Audit</a
+                >
+              </div>
+            </div>
+            <div class="services-footer">
+              <a href="./ResponseInvestigation.html" class="services-header"
+                >Response & Investigation</a
+              >
+              <div class="services-wrapper">
+                <a
+                  class="prevention-text"
+                  href="./ResponseInvestigation.html#IncidentResponse"
+                  >Incident Response</a
+                >
+                <a
+                  class="prevention-text"
+                  href="./ResponseInvestigation.html#incidentInvestigation"
+                  >Cyber Investigation</a
+                >
+                <a
+                  class="prevention-text"
+                  href="./ResponseInvestigation.html#malware"
+                  >Digital Forensics and Malware Analysis</a
+                >
+              </div>
+            </div>
+            <div class="products-footer">
+              <a class="products-header" href="./Products.html">Products</a>
+              <div class="services-wrapper">
+                <a class="prevention-text" href="./Products.html#why313"
+                  >Why 313X | TPCRM</a
+                >
+                <a class="prevention-text" href="./Products.html#313cases"
+                  >313X | TPCRM use cases</a
+                >
+                <a class="prevention-text" href="./Products.html#empower"
+                  >Empower your Cybersecurity
+                </a>
+              </div>
+            </div>
+
+            <div class="lang-footer">
+              <div>
+                <svg
+                  class="globe-footer"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <a class="lang-text-footer" href="./Produtos.html">Português</a>
+              </div>
+            </div>
+          </div>
+          <div class="logo-footer">
+            <div class="img-footer-wrapper">
+              <div class="policy-wrapper">
+                <!--<img class="linkedin-logo" src="./img/linkedin.png" />-->
+                <a
+                  href="https://www.linkedin.com/company/313xcybersecurity/"
+                  target="_blank"
+                >
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    class="linkedin-logo"
+                  >
+                    <path
+                      fill="white"
+                      d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                      class=""
+                    ></path>
+                  </svg>
+                </a>
+                <div class="policy-saas-wrapper">
+                  <a href="./PrivacyPolicy-en.html"
+                    ><p class="saas">Privacy Policy</p></a
+                  >
+                  <a href="./Saas-en.html"
+                    ><p class="policy">SaaS License Agreement</p></a
+                  >
+                </div>
+              </div>
+              <div class="logoImg-wrapper">
+                <img
+                  class="logoImg-footer"
+                  src="./img/313footer.png"
+                  alt="313x logo footer"
+                />
+              </div>
+            </div>
+            <div class="span-rights">
+              <span class="rights-reserved"
+                >2022 313X - All rights reserved</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+      function openDivNavbar() {
+        if (document.getElementById('navbar-sm').style.display === 'none') {
+          document.getElementById('navbar-sm').style.display = 'block';
+        } else {
+          document.getElementById('navbar-sm').style.display = 'none';
+        }
+      }
+      function selectPage1() {
+        document.getElementById('page1-selected').style.display = 'block';
+        document.getElementById('page1-notSelected').style.display = 'none';
+        document.getElementById('page2-selected').style.display = 'none';
+        document.getElementById('page2-notSelected').style.display = 'block';
+        document.getElementById('homePage').style.display = 'block';
+        document.getElementById('homePage2').style.display = 'none';
+      }
+      function selectPage2() {
+        document.getElementById('page1-selected').style.display = 'none';
+        document.getElementById('page1-notSelected').style.display = 'block';
+        document.getElementById('page2-selected').style.display = 'block';
+        document.getElementById('page2-notSelected').style.display = 'none';
+        document.getElementById('homePage').style.display = 'none';
+        document.getElementById('homePage2').style.display = 'block';
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

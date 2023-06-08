@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>313X - Cyber Investigations & Disputes</title>
+    <link rel="icon" type="image/x-icon" href="./img/313Fav.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=PT+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        line-height: 1.6;
+        color: #081824;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 1px;
+        background-color: white;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+
+      a:visited {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      a:active {
+        text-decoration: none;
+      }
+      .home {
+        width: 100%;
+        height: 100%;
+        /* CSS Smooth Scroll */
+        overflow-y: visible;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+      }
+      section {
+        width: 100%;
+        height: auto;
+        /* Scroll Snap */
+        scroll-snap-align: center;
+      }
+
+      .homePage {
+        padding: 150px;
+        height: auto;
+      }
+      .navBar {
+        margin-bottom: 200px;
+        position: fixed;
+        background-color: #081824;
+        width: 100%;
+        padding-top: 20px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 145px;
+        padding-right: 150px;
+      }
+      .logo {
+        height: 7vh;
+      }
+      .logoImg-footer {
+        height: 5vh;
+        align-self: flex-end;
+      }
+      .items {
+        align-self: center;
+        display: flex;
+        align-items: baseline;
+      }
+      .items-nav {
+        font-size: 20px;
+        color: #808080;
+        cursor: pointer;
+      }
+      .items-nav:hover {
+        color: white;
+      }
+      .dropdown-company,
+      .dropdown-prevention,
+      .dropdown-responseInvestigation,
+      .dropdown-products,
+      .dropdown-lang {
+        display: none;
+        position: absolute;
+        background-color: #081824;
+        min-width: 160px;
+        /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+        padding: 12px 16px;
+        z-index: 1;
+        border-radius: 5px;
+        color: white;
+      }
+      .company,
+      .prevention,
+      .products,
+      .responseInvestigation {
+        margin-right: 30px;
+      }
+      #company {
+        border-bottom: solid #fba32e;
+        padding-bottom: 10px;
+      }
+      .company:hover .dropdown-company,
+      .company:hover .arrow-up,
+      .company:hover .arrow-down {
+        display: block;
+      }
+      .responseInvestigation:hover .dropdown-responseInvestigation {
+        display: block;
+      }
+      .solutions:hover .dropdown-solutions,
+      .solutions:hover .arrow-up {
+        display: block;
+      }
+      .prevention:hover .dropdown-prevention,
+      .prevention:hover .arrow-up {
+        display: block;
+      }
+      .products:hover .dropdown-products,
+      .products:hover .arrow-up {
+        display: block;
+      }
+      .lang:hover .dropdown-lang {
+        display: block;
+      }
+
+      .contactUs {
+        color: #081824;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #fba32e;
+        padding: 5px 20px 5px 20px;
+      }
+      .contactUs:hover {
+        color: white;
+      }
+      .subTitleBig {
+        font-size: 50px;
+        color: white;
+        font-weight: regular;
+        text-align: left;
+        font-family: 'PT Sans', sans-serif;
+        letter-spacing: 2px;
+      }
+      .subTitle {
+        font-size: 25px;
+        color: rgb(206, 204, 204);
+        text-align: center;
+      }
+      .header {
+        font-size: 40px;
+        color: #081824;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .subHeader {
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .text {
+        margin-top: 20px;
+      }
+      .text2 {
+        margin-top: 50px;
+      }
+      .text-italic {
+        font-style: italic;
+      }
+      .text-orange {
+        font-weight: bold;
+        color: #fba32e;
+      }
+      .items-dropdown {
+        color: white;
+        display: block;
+        cursor: pointer;
+        font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .items-dropdown:hover {
+        color: #fba32e;
+      }
+
+      .incident {
+        margin-bottom: 50px;
+      }
+
+      .trusted {
+        padding-top: 100px;
+        background: white;
+      }
+
+      .footer-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        background: #081824;
+        padding: 100px 0px 100px 65px;
+      }
+      .services-wrapper,
+      .solutions-wrapper,
+      .products-wrapper,
+      .company-wrapper {
+        display: grid;
+        color: rgb(206, 204, 204);
+        padding: 5px;
+      }
+      .services-header,
+      .products-header,
+      .solutions-header,
+      .company-header {
+        font-size: 30px;
+        color: white;
+      }
+      .solutions-text,
+      .prevention-text,
+      .products-text {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: white;
+      }
+      .solutions-text:hover,
+      .prevention-text:hover,
+      .products-text:hover {
+        color: #fba32e;
+        cursor: pointer;
+      }
+
+      .rights-reserved {
+        font-size: 10px;
+        text-align: right;
+        padding-right: 20px;
+        color: white;
+      }
+      .logo-footer {
+        background-color: #081824;
+        padding-left: 195px;
+        padding-right: 106px;
+        padding-bottom: 20px;
+      }
+      .policy-wrapper {
+        display: flex;
+      }
+      .linkedin-logo {
+        height: 4vh;
+      }
+      .img-footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+      }
+      .saas {
+        padding-right: 20px;
+        padding-left: 20px;
+        color: white;
+      }
+      .policy {
+        color: white;
+      }
+
+      .policy:hover,
+      .saas:hover {
+        color: #fba32e;
+      }
+      .policy-saas-wrapper {
+        display: flex;
+        align-items: end;
+      }
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+      .navbar-sm {
+        display: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .lang-footer {
+        display: none;
+      }
+
+      .span-rights {
+        text-align: end;
+      }
+      @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        p {
+          font-size: 12px;
+        }
+        .homePage {
+          padding: 100px 20px 0px 20px;
+        }
+        .navbar-sm {
+          margin-bottom: 200px;
+          position: fixed;
+          background-color: #081824;
+          width: 100%;
+          padding-top: 20px;
+          padding-left: 20px;
+        }
+        .hamburger {
+          display: block;
+          align-self: center;
+          height: 60px;
+        }
+        .items {
+          display: none;
+        }
+        .hamburger-icon {
+          height: 50px;
+          width: 50px;
+          color: #fba32e;
+          text-align: right;
+        }
+        .nav {
+          display: flex;
+          justify-content: space-between;
+          padding-left: 30px;
+          padding-right: 30px;
+          align-items: center;
+        }
+        .logo {
+          height: 5vh;
+          align-self: center;
+        }
+        .logoImg-footer {
+          height: 5vh;
+          align-self: center;
+        }
+        .logoImg-wrapper {
+          text-align: center;
+        }
+        .items-nav {
+          padding-bottom: 5px;
+        }
+        .header {
+          font-size: 30px;
+        }
+        .subTitleBig {
+          font-size: 32px;
+          color: white;
+          font-weight: regular;
+          text-align: left;
+          font-family: 'PT Sans', sans-serif;
+          letter-spacing: 2px;
+        }
+
+        .incident {
+          margin-bottom: 20px;
+          font-size: 12px;
+        }
+
+        .list-item {
+          margin-bottom: 10px;
+          font-size: 12px;
+        }
+
+        .solutions-footer,
+        .services-footer,
+        .products-footer,
+        .company-footer {
+          display: none;
+        }
+
+        .contact-headquarters,
+        .contact-email,
+        .contact-phone {
+          padding: 40px 0px 40px 0px;
+        }
+        .rights-reserved {
+          padding-right: 0px;
+          padding-left: 10px;
+          padding-top: 20px;
+          text-align: center;
+          color: white;
+        }
+        .globe-footer {
+          color: #808080;
+          height: 35px;
+          padding-right: 5px;
+          color: #fba32e;
+        }
+        .lang-footer {
+          display: block;
+          justify-content: center;
+          align-items: center;
+          padding-left: 0px;
+          justify-content: center;
+        }
+        .lang-text-footer {
+          font-size: 12px;
+          color: #eeebea;
+        }
+        .logo-footer {
+          background-color: #081824;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-bottom: 20px;
+        }
+        .img-footer-wrapper {
+          display: block;
+          color: white;
+        }
+        .policy-wrapper {
+          display: block;
+          text-align: center;
+        }
+        .policy-saas-wrapper {
+          display: block;
+          align-items: center;
+          padding-bottom: 50px;
+        }
+        .linkedin-logo {
+          height: 5vh;
+          padding-left: 0px;
+          margin-bottom: 20px;
+        }
+        .span-rights {
+          text-align: center;
+        }
+        .footer-wrapper {
+          display: block;
+          text-align: center;
+          color: white;
+          background: #081824;
+          padding: 50px 0px 50px 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navBar">
+      <nav>
+        <div class="nav">
+          <div style="padding-bottom: 10px">
+            <a href="./index.html">
+              <img
+                class="logo animated fadeInLeft"
+                src="./img/313logo.png "
+                alt="313x logo"
+              />
+            </a>
+          </div>
+          <div class="hamburger animated fadeInRight">
+            <svg
+              onclick="openDivNavbar()"
+              xmlns="http://www.w3.org/2000/svg"
+              class="hamburger-icon"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+
+          <div class="items">
+            <div class="company" id="company">
+              <a class="items-nav" href="./index.html">A Empresa</a>
+
+              <!-- <div
+                  class="arrow-up animate__animated animate__fadeIn"
+                ></div> -->
+              <div class="dropdown-company animated fadeIn">
+                <a class="items-dropdown" href="./index.html#about"
+                  >Sobre a 313X</a
+                >
+                <a class="items-dropdown" href="./index.html#incident"
+                  >Ciclo de Gerenciamento do Incidente</a
+                >
+                <a class="items-dropdown" href="./index.html#industries"
+                  >Indústrias</a
+                >
+                <a class="items-dropdown" href="./index.html#contact"
+                  >Converse Conosco</a
+                >
+              </div>
+            </div>
+            <div class="prevention">
+              <a class="items-nav" href="./Prevencao.html">Prevenção</a>
+              <div class="dropdown-prevention animated fadeIn">
+                <a class="items-dropdown" href="./Prevencao.html#security"
+                  >Avaliação de Segurança</a
+                >
+                <a class="items-dropdown" href="./Prevencao.html#pentest"
+                  >Pentest</a
+                >
+                <a class="items-dropdown" href="./Prevencao.html#redTeaming"
+                  >Simulação de Ataque</a
+                >
+                <a class="items-dropdown" href="./Prevencao.html#consulting"
+                  >Consultoria e Auditoria</a
+                >
+              </div>
+            </div>
+            <div class="responseInvestigation">
+              <a class="items-nav" href="./RespostaInvestigacao.html"
+                >Resposta & Investigação</a
+              >
+              <div class="dropdown-responseInvestigation animated fadeIn">
+                <a
+                  class="items-dropdown"
+                  href="./RespostaInvestigacao.html#IncidentResponse"
+                  >Resposta a Incidentes</a
+                >
+                <a
+                  class="items-dropdown"
+                  href="./RespostaInvestigacao.html#incidentInvestigation"
+                  >Investigação Cibernética</a
+                >
+                <a
+                  class="items-dropdown"
+                  href="./RespostaInvestigacao.html#malware"
+                  >Forense Digital e Análise de Malware</a
+                >
+              </div>
+            </div>
+
+            <div class="products">
+              <a class="items-nav" href="./Produtos.html">Produtos</a>
+              <div class="dropdown-products animated fadeIn">
+                <a class="items-dropdown" href="./Produtos.html#why313"
+                  >Por quê 313X | TPCRM?</a
+                >
+                <a class="items-dropdown" href="./Produtos.html#313cases"
+                  >Casos de Uso da 313X | TPCRM</a
+                >
+                <a class="items-dropdown" href="./Produtos.html#empower"
+                  >Otimize sua cibersegurança
+                </a>
+              </div>
+            </div>
+            <div style="display: flex">
+              <a
+                class="contactUs"
+                href="./index.html#contact"
+                style="font-size: 16px"
+                >Fale Conosco</a
+              >
+              <div
+                style="padding-left: 20px; justify-content: center"
+                class="lang"
+              >
+                <svg
+                  class="items-nav"
+                  style="color: #808080; height: 35px"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                  ></path>
+                </svg>
+                <div class="dropdown-lang animated fadeIn">
+                  <a class="items-dropdown" href="./Saas.html">Português</a>
+                  <a class="items-dropdown" href="./Saas-en.html">English</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-sm animated fadeIn" id="navbar-sm">
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./index.html">Sobre a 313X</a>
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./Prevencao.html">Prevenção</a>
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./RespostaInvestigacao.html"
+              >Resposta & Investigação</a
+            >
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./Produtos.html">Produtos</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="home">
+      <section class="homePage" id="homePage">
+        <h1 class="header">Contrato de Licença de Uso de SaaS</h1>
+        <div class="text">
+          <p class="text-italic">
+            Última atualização em 17 de fevereiro de 2021
+          </p>
+          <p>
+            Este Contrato de Licença se refere aos softwares de tecnologia da
+            <a href="https://313x.com.br/" target="_blank"
+              ><span class="text-orange">313X</span></a
+            >
+            (como, o 313X | TPCRM).
+          </p>
+          <p>
+            Ao aceitar os termos e condições deste Contrato de Licença, você se
+            tornará usuário ou licenciado do Software 313X | TPCRM (“Usuário” ou
+            "Cliente" ou “Licenciado”), expressando sua total concordância e
+            aceitação de todos os termos e condições aqui estabelecidos, bem
+            como todos os termos e condições da
+            <a href="https://313x.com.br/PrivacyPolicy.html" target="_blank"
+              ><span class="text-orange">Política de Privacidade</span></a
+            >
+            e
+            <a href="https://313x.com.br/Saas.html" target="_blank"
+              ><span class="text-orange">Termos de Uso</span></a
+            >
+            da 313X.
+          </p>
+          <p>
+            Caso você não aceite os termos e condições deste Contrato de
+            Licença, por favor, não prossiga com o seu cadastro no 313X | TPCRM
+            e não use os Serviços. Da mesma forma, o uso do 313X | TPCRM implica
+            na aceitação dos termos e condições deste Contrato de Licença, da
+            <a href="https://313x.com.br/PrivacyPolicy.html" target="_blank"
+              ><span class="text-orange">Política de Privacidade</span></a
+            >
+            e
+            <a href="https://313x.com.br/Saas.html" target="_blank"
+              ><span class="text-orange">Termos de Uso</span></a
+            >.
+          </p>
+          <p>
+            Este Contrato de Licença representa todo o compromisso firmado entre
+            a 313X Serviço de Segurança e Inteligência Cibernética Ltda.,
+            inscrita no CNPJ nº 30.221.177/0001-89 (“313X“), e suas afiliadas, e
+            o Licenciado, anulando todo e qualquer outro contrato prévio de
+            licenciamento eventualmente firmado entre a 313X e o Licenciado
+            referente ao Software 313X | TPCRM. Da mesma forma e nos casos
+            permitidos pela legislação aplicável, os termos e condições do
+            presente Contrato de Licença deverão prevalecer em relação a
+            qualquer comunicado ou material publicitário, caso tal material
+            contradiga algum dos termos e condições aqui previstos, ou seja,
+            anterior a este Contrato de Licença.
+          </p>
+          <p>
+            A aceitação dos termos e condições deste Contrato de Licença não
+            concede ao Usuário qualquer direito de propriedade sobre os
+            aplicativos.
+          </p>
+          <p>
+            Este Contrato foi atualizado pela última vez na data acima. Ele
+            entra em vigor entre o Licenciado e a 313X a partir de: (a) a data
+            em que você aceitar este Contrato ou (b) a data em que você acessar
+            ou usar os Serviços pela primeira vez.
+          </p>
+          <p>
+            Antes, vamos definir algumas palavras, expressões e termos que serão
+            adiante indicados:
+          </p>
+          <ul>
+            <li>
+              <p>
+                <span style="font-weight: bold">"Afiliada" </span>
+                significa qualquer entidade que direta ou indiretamente
+                controle, seja controlada ou esteja sob controle comum com a
+                entidade em questão.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">“Contrato” </span>
+                significa este Contrato Licença de Uso de SaaS (Software as a
+                Service) do Usuário Final.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">“Serviços Beta” </span>
+                significa certos recursos, tecnologias e serviços que geralmente
+                não estão disponíveis para os clientes, conforme atualizados de
+                tempos em tempos.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold"
+                  >Cliente”, "Licenciado", “você”
+                </span>
+                ou <span style="font-weight: bold">“seu”</span>
+                significa a pessoa física que aceita este Contrato ou, se
+                aplicável, a empresa ou outra entidade legal para a qual o
+                Cliente está aceitando este Contrato.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold"
+                  >"Informações Fornecidas e/ou Documentos Gerados pelo Cliente"
+                </span>
+                significa dados e informações eletrônicas enviadas por ou para o
+                Cliente aos Serviços ou coletadas e processadas por ou para o
+                Cliente como resultado de seu uso dos Serviços (por exemplo,
+                nome de usuário, informações de contato do fornecedor,
+                solicitações de suporte, correção de problemas, documentos
+                transmitidos entre/para com outros Clientes durante o uso do
+                Serviço e outra informações)
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold"
+                  >"Política de Privacidade"
+                </span>
+                significa a Política de Privacidade da 313X, conforme atualizada
+                periodicamente, localizada em:
+                <a
+                  href="https://313x.com.br/PrivacyPolicy.html"
+                  style="color: #fba32e; font-weight: bold"
+                  target="_blank"
+                  >https://313x.com.br/PrivacyPolicy.html</a
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">"Serviços" </span>
+                significa os produtos e serviços disponibilizados on-line ou de
+                outra forma pela 313X, incluindo serviços de suporte ao cliente
+                fornecidos em conexão com as ofertas de SaaS (Software as a
+                Service) da 313X. “Serviços” excluem Serviços originalmente de
+                Terceiros e quaisquer produtos, serviços ou conteúdos
+                relacionados a eles.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">“Prazo de Assinatura” </span>
+                significa o período de tempo durante o qual os Usuários têm
+                permissão para usar os Serviços, conforme especificado no
+                processo de Cadastro (Sign Up) e incluindo todas as renovações
+                ou extensões do mesmo.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span style="font-weight: bold">"313X”, “nós” </span>
+                ou <span style="font-weight: bold">“nos”</span>
+                significa 313X Cybersecurity.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">1. CONCESSÃO DE LICENÇA DE USO DOS SAAS</h2>
+          <p>
+            <span style="font-weight: bold">1.1 Cessão de Direito de Uso.</span>
+            Por meio do presente Contrato de Licença, a 313X concede ao
+            Licenciado uma licença não-exclusiva e intransferível de uso do(s)
+            softwares(s) de sua tecnologia. A 313X e/ou o Licenciado poderá
+            encerrar este Contrato de Licença por qualquer motivo e a qualquer
+            momento, ao informar a outra parte.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >1.2 Responsabilidade do Licenciado.</span
+            >
+            O Licenciado não poderá de modo algum transferir os direitos
+            concedidos neste Contrato de Licença, nem sublicenciar, distribuir,
+            decompilar, emprestar, realizar engenharia inversa ou transferir os
+            softwares sem o consentimento por escrito da 313X. Com o término do
+            presente contrato, o Licenciado interromperá o uso dos softwares
+            imediatamente e destruirá todas as eventuais cópias.
+          </p>
+        </div>
+        <div class="text2">
+          <p class="subHeader">2. DIREITOS DE PROPRIEDADE E LICENÇAS</p>
+          <p>
+            <span style="font-weight: bold">2.1 Propriedade Intelectual. </span>
+            Os aplicativos, bem como os documentos e informações
+            correspondentes, são de propriedade exclusiva da 313X, que é a
+            proprietária de todos os direitos de propriedade intelectual
+            relativos aos aplicativos, incluindo, mas não se limitando a,
+            direitos relativos a patentes, desenhos industriais, modelos de
+            utilidade, segredos de negócio, marcas comerciais, marcas de
+            serviço, fundo de comércio, informações confidenciais, direitos
+            autorais e quaisquer outros direitos de propriedade intelectual,
+            registrados ou não, relativos aos aplicativos, documentação ou a
+            qualquer outro serviço ou produto licenciado pela 313X ao Usuário
+            como parte deste Contrato de Licença.
+          </p>
+
+          <p>
+            <span style="font-weight: bold"
+              >2.2 Reserva de Direitos da 313X.
+            </span>
+            Sujeito aos direitos limitados expressamente concedidos neste
+            instrumento, a 313X reserva todos os seus direitos, títulos e
+            interesses nos Serviços e quaisquer materiais proprietários da 313X
+            contidos neles, incluindo todos os direitos de propriedade
+            intelectual neles contidos, e o Cliente não adquire nenhum direito
+            com relação a aos Serviços, por implicação ou de outra forma, exceto
+            aqueles expressamente concedidos neste Contrato.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >2.3 Reserva de Direitos do Licenciado.
+            </span>
+            O Cliente reserva-se todos os direitos, títulos e interesses de
+            informações fornecidas durante o uso dos softwares da 313X, desde
+            que a 313X possa usar as informações fornecidas pelo Cliente para
+            criar Relatórios Genéricos e conforme previsto na Seção 2.4 abaixo.
+            Nenhum direito é concedido ao Cliente, exceto conforme expressamente
+            estabelecido neste documento.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >2.4 Informação Fornecida e/ou Conteúdo Gerado pelo Licenciado.
+            </span>
+            Ao criar, publicar, enviar, publicar, distribuir ou transmitir
+            qualquer informação fornecida e/ou conteúdo gerado pelo Cliente
+            através dos aplicativos, sites, plataformas, serviços e/ou produtos
+            de terceiros aos quais o Usuário tenha acesso devido ao uso ou
+            instalação de quaisquer aplicativos da 313X, o Usuário declara e
+            garante deter os direitos necessários para conceder e concede à
+            313X, o direito não exclusivo, isento de royalties, perpétuo,
+            irrevogável, mundial, transferível e licenciável, para usar, copiar,
+            modificar, adaptar, distribuir, armazenar, hospedar, publicar,
+            processar, criar trabalhos derivados, licenciar ou explorar de
+            qualquer forma, no todo ou em parte, qualquer mídia, software ou
+            meio que seja conhecido ou possa vir a existir daqui em diante
+            relativo à informação fornecida e/ou conteúdo gerado pelo(fornecido
+            pelo Licenciado) para fins de operação e/ou fornecimento dos
+            aplicativos, sem a necessidade de qualquer aviso, autorização,
+            consentimento ou compensação adicional. O CLIENTE CONCEDE À 313X O
+            DIREITO DE USAR SUAS INFORMAÇÕES, EM CONFORMIDADE COM A LEI
+            APLICÁVEL, PARA: (A) FORNECER OS SERVIÇOS DE ACORDO COM ESTE
+            CONTRATO E A
+            <a href="https://313x.com.br/PrivacyPolicy.html" target="_blank"
+              ><span class="text-orange">POLÍTICA DE PRIVACIDADE </span></a
+            >
+            E
+            <a href="https://313x.com.br/Saas.html" target="_blank"
+              ><span class="text-orange">TERMOS DE USO</span></a
+            >, (B) COMUNICAR-SE COM QUAISQUER FORNECEDORES OU CONTATOS
+            FORNECIDOS PELO CLIENTE, (C) PREVENIR OU RESOLVER PROBLEMAS TÉCNICOS
+            OU DE SERVIÇO, (D) CONFORME EXPRESSAMENTE PERMITIDO PELO CLIENTE, OU
+            (E) CONFORME EXIGIDO POR LEI. A 313X TAMBÉM PODE USAR TODAS AS
+            INFORMAÇÕES FORNECIDAS PELO CLIENTE DE MANEIRA AGREGADA, NÃO
+            IDENTIFICADA E GENÉRICA, EM CONFORMIDADE COM A LEI APLICÁVEL, PARA
+            FINS DE MARKETING, PESQUISA, DEFINIÇÃO DE BENCHMARKS, SUGESTÕES DE
+            RECURSOS, ANÁLISE DE PRODUTOS E NOVOS RECURSOS OU SERVIÇOS DE
+            PRODUTOS, ANÁLISES DE UTILIZAÇÃO DE SERVIÇOS E AFINS FINS, DESDE QUE
+            (I) SEJA UTILIZADO APENAS PARA FINS ADMINISTRATIVOS INTERNOS E
+            ESTATÍSTICAS GERAIS DE USO; (II) NÃO IDENTIFICA O CLIENTE OU SEUS
+            AGENTES, REPRESENTANTES, CLIENTES OU FUNCIONÁRIOS E NÃO É ATRIBUÍVEL
+            A TAIS PESSOAS OU ENTIDADES DE FORMA ALGUMA; E (III) QUANDO AS
+            INFORMAÇÕES FORNECIDAS PELO CLIENTE SÃO USADOS ​​DESSA MANEIRA PARA
+            CRIAR ESTATÍSTICAS GERAIS DE USO DIVULGADAS PUBLICAMENTE, ESSAS
+            ESTATÍSTICAS SÃO USADAS PARA RELATAR APENAS O USO AGREGADO TOTAL
+            ENTRE OS CLIENTES DA 313X.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >2.5 Licença pelo Cliente para Usar Feedback.
+            </span>
+            O Cliente concede à 313X uma licença mundial, perpétua, irrevogável,
+            transferível e isenta de royalties para usar e incorporar nos
+            Serviços qualquer sugestão, solicitação de aprimoramento,
+            recomendação, correção ou outro feedback fornecido pelo Cliente ou
+            Usuários relacionados à operação dos Serviços, desde que que a 313X
+            não identifique o Cliente como a fonte de tal feedback.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >2.6 Utilização de Licenças Open Source em Softwares de Tecnologia
+              313X.
+            </span>
+            Certos códigos de software incorporados ou distribuídos com os
+            aplicativos podem ser licenciados por terceiros sob várias licenças
+            de software de “fonte aberta” ou “fonte pública” (tais como a
+            Licença Pública Mozilla, Licença Pública Geral GNU, Licença Pública
+            Geral GNU Affero, Licença Pública do Lado do Servidor (Server Side
+            Public Licence - SSPL), Licença Apache, a Licença de Distribuição de
+            Software Berkeley e a Licença MIT) (coletivamente, “Software Open
+            Source”). Não obstante qualquer disposição em contrário neste
+            Contrato, o Software Open Source não é licenciado por este contrato
+            e, em vez disso, é licenciado separadamente de acordo com os termos
+            e condições de suas respectivas licenças, o que o Usuário concorda e
+            se compromete em observar e cumprir.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">3. TESTE GRÁTIS</h2>
+          <p>
+            <span style="font-weight: bold">3.1 Teste Grátis. </span>
+            Se o Cliente se registrar no site da 313X para uma avaliação
+            gratuita ou utilizar a funcionalidade dos Serviços gratuitamente, a
+            313X disponibilizará um ou mais Serviços para o Cliente em caráter
+            de avaliação, gratuitamente, até (a) o final do período de teste
+            gratuito para o qual o Cliente se registrou para usar o(s)
+            Serviço(s) aplicável(eis), ou (b) a data de início de quaisquer
+            assinaturas de Serviço Adquirido solicitadas pelo Cliente para
+            tal(s) Serviço(s). DADOS DE SERVIÇOS AO CLIENTE EM PRODUTOS DE
+            TECNOLOGIA 313X OU EM NOSSA POSSE OU CONTROLE, QUAISQUER RELATÓRIOS
+            E QUAISQUER PERSONALIZAÇÕES FEITA NOS SERVIÇOS POR OU PARA O
+            USUÁRIO, DURANTE A SUA AVALIAÇÃO GRATUITA, PODEM SER PERMANENTEMENTE
+            PERDIDOS OU EXCLUÍDOS NO FINAL DO PERÍODO DE AVALIAÇÃO GRATUITA, A
+            MENOS QUE O CLIENTE COMPRE UMA ASSINATURA AOS MESMOS SERVIÇOS QUE
+            AQUELES COBERTOS PELA AVALIAÇÃO OU COMPRA DE SERVIÇOS ATUALIZADOS
+            ANTES DO FINAL DO PERÍODO DE AVALIAÇÃO.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >3.2 Isenção de Responsabilidade.
+            </span>
+            A 313X NÃO SE RESPONSABILIZA POR QUAISQUER DANOS OU DANOS
+            DECORRENTES DE OU RELACIONADOS A UM TESTE GRATUITO, DURANTE O TESTE
+            GRATUITO, OS SERVIÇOS SÃO FORNECIDOS “COMO ESTÃO” SEM QUALQUER
+            GARANTIA. Revise a Documentação durante o período de avaliação para
+            se familiarizar com os recursos e funções dos Serviços antes de
+            fazer sua compra.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">4. RESPONSABILIDADES DA 313X.</h2>
+          <p>
+            <span style="font-weight: bold">4.1 Prestação de Serviços. </span>
+            A 313X (a) disponibilizará os Serviços contratados pelo Cliente de
+            acordo com este Contrato, e (b) fornecerá suporte padrão para os
+            Serviços contratados pelo Cliente sem custo adicional. Não obstante
+            o acima exposto, os Serviços podem não estar disponíveis devido a:
+            (i) tempo de inatividade planejado (do qual a 313X deverá fornecer
+            aviso eletrônico avançado por meio dos Serviços ou de outra forma e
+            que a 313X deverá agendar na medida do possível durante o horário de
+            fim de semana) e (ii) circunstâncias além do nosso controle
+            razoável, incluindo, por exemplo, um caso fortuito, ato do governo,
+            inundação, incêndio, terremoto, agitação civil, ato de terror,
+            pandemia, epidemia, restrição de quarentena, greve ou outro problema
+            trabalhista (exceto um envolvendo funcionários do 313X), falha ou
+            atraso do provedor de serviços de Internet, Falha ou atraso do
+            aplicativo não 313X, ou por ataque de negação de serviço.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >4.2 Modificações de Serviços.
+            </span>
+            A 313X reserva-se o direito de fazer alterações nos Serviços a
+            qualquer momento e de tempos em tempos, desde que, no entanto, a
+            313X não diminua materialmente a funcionalidade dos Serviços
+            contratados durante o Prazo de Assinatura. Se a 313X diminuir
+            substancialmente a funcionalidade dos Serviços contratados, a 313X
+            notificará previamente o Cliente de tal alteração.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >4.3 Proteção de dados de atendimento ao Licenciado.
+            </span>
+            A 313X manterá proteções administrativas, físicas e técnicas padrão
+            do setor para proteção da segurança, confidencialidade e integridade
+            dos Serviços e das Informações Fornecidas e Conteúdos Gerados pelo
+            Cliente. Essas salvaguardas incluirão, mas não se limitarão a,
+            salvaguardas para garantir a segurança dos sistemas de tecnologia da
+            informação usados ​​para fornecer os Serviços, mantendo e testando
+            (pelo menos anualmente) um programa de gerenciamento de incidentes e
+            medidas para prevenir acesso, uso, modificação ou divulgação de
+            Informações Fornecidas e Conteúdos Gerados pelo Client ao Cliente
+            pelo pessoal da 313X. A 313X informará imediatamente o Cliente após
+            a descoberta de qualquer violação de segurança, confidencialidade
+            e/ou integridade dos Serviços ou Dados de Atendimento ao Cliente que
+            afetem o Cliente.
+          </p>
+          <p>
+            <span style="font-weight: bold">4.4 Serviços Beta. </span>
+            De tempos em tempos, a 313X pode convidar o Cliente a experimentar
+            os Serviços Beta gratuitamente. O Cliente pode aceitar ou recusar
+            qualquer avaliação a seu exclusivo critério. Os Serviços Beta serão
+            claramente designados como beta, piloto, versão limitada,
+            visualização do desenvolvedor, não produção, avaliação ou por uma
+            descrição de importação semelhante. Os Serviços Beta são para fins
+            de avaliação e não para uso em produção, não são considerados
+            “Serviços” sob este Contrato, não são suportados e podem estar
+            sujeitos a termos adicionais. Salvo indicação em contrário, qualquer
+            período de avaliação dos Serviços Beta expirará na data em que uma
+            versão dos Serviços Beta estiver disponível para todos. A 313X pode
+            descontinuar os Serviços Beta a qualquer momento, a seu exclusivo
+            critério, e nunca poderá disponibilizá-los em geral. A 313X NÃO TERÁ
+            RESPONSABILIDADE POR QUAISQUER DANOS OU DANOS DECORRENTES DE OU
+            RELACIONADOS A UM SERVIÇO BETA.
+          </p>
+          <p style="font-weight: bold">4.5 Isenções de responsabilidade</p>
+          <p>
+            <span style="font-weight: bold"
+              >4.5.1 Funcionamento dos Serviços.
+            </span>
+            Em relação aos Serviços, os mesmos são fornecidos da forma como se
+            apresentam e não serão aceitas reclamações relacionadas a falhas na
+            execução de funções presumidas. Adicionalmente, a 313X, seus
+            afiliados, licenciadores e fornecedores não se responsabilizam e não
+            oferecem quaisquer garantias, expressas ou implícitas, de qualquer
+            natureza, incluindo, mas não se limitando, sobre (i) o funcionamento
+            dos softwares que venham a ocorrer nas principais funções dos
+            Serviços. A 313X, SUAS AFILIADAS, LICENCIADORES E OUTROS
+            FORNECEDORES NÃO GARANTEM QUE: (1) OS PROGRAMAS OU SERVIÇOS
+            ATENDERÃO AOS SEUS REQUERIMENTOS; (2) O USO DOS PROGRAMAS OU
+            SERVIÇOS SERÁ ININTERRUPTO, OPORTUNO, SEGURO OU LIVRE DE ERROS; OU
+            (3) OS RESULTADOS QUE PODEM SER OBTIDOS A PARTIR DO USO DOS
+            PROGRAMAS OU SERVIÇOS SERÃO PRECISOS OU CONFIÁVEIS.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >4.5.2 Materiais compartilhados e/ou hospedados por Outros
+              Licenciados.
+            </span>
+            Além disso, considerando que ao utilizar os Serviços, o Licenciando
+            poderá ter acesso a materiais compartilhados e/ou hospedados por
+            outros Usuários, o Licenciado declara que tem conhecimento da
+            impossibilidade de monitoramento pela 313X de tais materiais, e por
+            isso concorda e garante que o acesso a tais materiais será por sua
+            própria e exclusiva conta e risco, inclusive aceitando como
+            exclusivamente sua a responsabilidade por eventuais perdas e/ou
+            danos causados por possíveis incompatibilidades, alterações, erros,
+            exclusões de arquivos, mau funcionamento e/ou problemas que possam
+            ocorrer nos seus dispositivos, hardwares, softwares, sistemas,
+            aplicativos, arquivos, funcionalidades, sequências de códigos e
+            demais programas, incluindo, mas não se limitando aos programas
+            antivírus e programas ou serviços de armazenamento, em consequência
+            do uso dos aplicativos ou atualizações dos mesmos, realizados pelo
+            Licenciado. A 313X fica isenta de toda e qualquer responsabilidade
+            por eventual dano, seja direto, consequencial, indireto ou
+            semelhante, perdas de chance, perdas de trabalho, ou perdas de
+            receita, mesmo que a 313X tenha sido advertida previamente sobre a
+            possibilidade de ocorrência desses danos nas hipóteses de ação ou
+            omissão do Licenciado.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >4.5.3 Erro ou Mau Funcionamento por Elementos Externos.
+            </span>
+            Fica estabelecido ainda, que em nenhuma hipótese ou circunstância, a
+            313X se comprometerá ou se responsabilizará por qualquer erro ou mau
+            funcionamento causados por elementos externos à funcionalidade dos
+            Serviços licenciados, incluindo hardware ou software, ou será
+            responsável por quaisquer danos superiores a qualquer valor pago, em
+            que for aplicável, pelo Licenciado pelo uso dos Serviços, mesmo que
+            a 313X tenha sido advertida previamente sobre a possibilidade de
+            ocorrência desses danos. A 313X TAMBÉM NÃO SE COMPROMETERÁ NEM SE
+            RESPONSABILIZARÁ EM CASOS EM QUE OS SERVIÇOS TENHAM SIDO USADOS DE
+            MANEIRA DIVERSA DA ESPECIFICADA PELA 313X, OU DE QUALQUER OUTRA
+            MANEIRA ABUSIVA, NEGLIGENTE OU INAPROPRIADA (INCLUINDO, SEM
+            LIMITAÇÕES, O SEU USO FORA DO AMBIENTE RECOMENDADO) OU POR
+            TERCEIROS, QUE NÃO O LICENCIADO, QUE SERÁ O RESPONSÁVEL PELO USO
+            REALIZADO POR TERCEIROS E TODAS CONSEQUÊNCIAS DECORRENTES.
+          </p>
+          <p>
+            <span style="font-weight: bold">4.5.4 Terceiros. </span>
+            A 313X não se se responsabiliza e não se responsabilizará por
+            qualquer pessoa, entidade ou terceiros em geral, em relação a
+            qualquer prejuízo ou perda presumivelmente provocada pelo uso ou
+            pela inabilidade no uso dos aplicativos, direta ou indiretamente,
+            incluindo (sem limitação) interrupções de trabalho, perdas de
+            capital, danos indiretos, e/ou perdas de receita prevista como
+            resultado do uso dos aplicativos. Você reconhece e concorda que
+            alguns dos Serviços dependem de informações que obtemos de
+            terceiros. Na medida em que não formos mais capazes de obter tais
+            Informações de Terceiros, você reconhece e concorda que todas ou
+            partes dos Serviços podem se tornar indisponíveis. A 313X também não
+            será responsável por você por tal disponibilidade.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >4.5.4.1 Recursos e Sites de Terceiros.
+            </span>
+            Os Serviços podem fornecer, ou terceiros podem fornecer, resultados
+            de pesquisa ou outros links para outros sites da World Wide Web ou
+            outros recursos. Como a 313X não tem controle sobre tais sites e
+            recursos, o Usuário reconhece e concorda que a 313X não é
+            responsável pela disponibilidade de tais sites ou recursos externos
+            e não endossa e não se responsabiliza por qualquer conteúdo,
+            propaganda, produtos, ou outros materiais presentes ou disponíveis a
+            partir de tais sites ou recursos. O Usuário reconhece e concorda que
+            a 313X não será responsável, direta ou indiretamente, por qualquer
+            perda ou dano eventualmente ou alegadamente causado por, ou em
+            conexão com o uso de, ou confiança em tal conteúdo, bens ou serviços
+            disponíveis no, ou através de tais sites ou recursos, tampouco pela
+            coleta de dados ou informações do Usuário por tais sites ou
+            recursos.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">5. RESPONSABILIDADES DO LICENCIADO</h2>
+          <p>
+            <span style="font-weight: bold"
+              >5.1 Senhas e Gerenciamento de Identidade.
+            </span>
+            O Usuário é responsável exclusivo pela segurança de sua senha, PIN,
+            padrão e/ou impressão digital (“Senhas”) e por manter sua Conta com
+            os aplicativos seguros. O Usuário deverá manter suas Senhas e/ou
+            chaves de criptografia de sua conta em lugares seguros, sob pena de
+            perder o acesso à sua Conta. O Usuário é o único e exclusivo
+            responsável por qualquer atividade que ocorrer em sua Conta,
+            inclusive pelo eventual uso por terceiros.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >5.1.1 Uso ou Acesso Não Autorizado à Conta do Licenciado.
+            </span>
+            Na hipótese de qualquer uso ou acesso não autorizado à Conta do
+            Usuário, isso deverá ser informado imediatamente à 313X, que não se
+            responsabiliza e não se responsabilizará por eventual perda causada
+            pelo acesso e/ou utilização não autorizada de qualquer Conta. No
+            entanto, o Usuário poderá ser responsabilizado por qualquer perda
+            que a 313X e/ou outros venham a sofrer em razão de um acesso e/ou
+            uso não autorizado a qualquer Conta. A 313X NÃO TEM ACESSO A SENHAS
+            E NÃO PODE RECUPERAR QUAISQUER DADOS CRIPTOGRAFADOS SE O USUÁRIO
+            ESQUECER A SENHA DE ACESSO PARA QUALQUER FUNÇÃO DE ACESSO E/OU
+            GERENCIAMENTO DOS APLICATIVOS.
+          </p>
+          <p>
+            <span style="font-weight: bold">5.2 Utilização dos Serviços. </span>
+            O Cliente será responsável (a) pela conformidade dos Usuários com
+            este Contrato e por todas as atividades que ocorrerem por meio do
+            uso dos Serviços pelos Usuários, (b) pela precisão, qualidade e
+            legalidade das Informações Fornecidas e Conteúdos Gerados pelo
+            Cliente e Usuário, incluindo qualquer obtenção de todos os
+            consentimentos necessários ou direitos necessários para usar as
+            informações e documentos, (c) pelo impedimento de acesso ou uso não
+            autorizado dos Serviços (incluindo não compartilhar nenhuma senha de
+            Usuário) e notificar a 313X imediatamente sobre qualquer acesso ou
+            uso não autorizado, e (d) pelo cumprimento das condições expressas
+            nos
+            <a href="https://313x.com.br/Saas.html" target="_blank"
+              ><span class="text-orange">Termos de Uso</span></a
+            >
+            da 313X.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >5.2.1 Tratamento de Conteúdos e Dados em Conformidade.
+            </span>
+            As funções auxiliares para armazenamento de dados e/ou conteúdos do
+            Usuário através dos Serviços não substituem os procedimentos normais
+            que o Usuário deve realizar para manter uma cópia segura dos dados
+            e/ou conteúdos salvos em seu dispositivo, bem como, não asseguram a
+            recuperação de quaisquer dados e/ou conteúdos que sejam armazenados
+            ou transmitidos através dos aplicativos. A 313X NÃO INSPECIONA OS
+            CONTEÚDOS E/OU DADOS ARMAZENADOS OU TRANSMITIDOS ATRAVÉS DOS
+            SERVIÇOS. O USUÁRIO CONCORDA QUE É O RESPONSÁVEL E ASSEGURA QUE OS
+            CONTEÚDOS E/OU DADOS ARMAZENADOS OU TRANSMITIDOS PELOS SERVIÇOS NÃO
+            SÃO ILEGAIS E NÃO VIOLAM DIREITOS AUTORAIS DE TERCEIROS, NEM AS
+            REGRAS OU POLÍTICAS DA 313X. Portanto, o Usuário concorda e se
+            compromete em indenizar a 313X, suas afiliadas, seus executivos,
+            colaboradores, empregados, parceiros e/ou Licenciados de quaisquer
+            perdas, custos ou despesas (incluindo honorários advocatícios),
+            decorrente de qualquer demanda relacionada aos conteúdos e/ou dados
+            que armazenar ou transmitir através dos aplicativos.
+          </p>
+          <p>
+            <span style="font-weight: bold">5.3 Defesa à 313X. </span>
+            O Cliente defenderá a 313X contra qualquer reclamação, demanda,
+            processo ou processo feito ou movido contra a 313X por um terceiro
+            alegando que Informações Fornecidas e Conteúdos Gerados pelo
+            Cliente, ou seu uso de qualquer Serviço em violação deste Contrato,
+            infringe ou se apropria indevidamente dos direitos de propriedade
+            intelectual de tal terceiro ( uma “ Reclamação Contra a 313X”), e
+            indenizará a 313X de quaisquer danos, honorários advocatícios e
+            custos finalmente concedidos contra a 313X como resultado de, ou por
+            quaisquer valores pagos pela 313X em sentença ou acordo judicial ou
+            extrajudicial. As obrigações de defesa e indenização acima não se
+            aplicam na medida em que uma Reivindicação Contra a 313X decorre de:
+            (i) violação deste Contrato pela 313X ou (ii) negligência,
+            imprudência, negligência grave ou dolo comprovado da 313X.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">6. LIMITAÇÃO DE RESPONSABILIDADE</h2>
+          <p>
+            <span style="font-weight: bold">
+              6.1 Limitação de Responsabilidade.
+            </span>
+            NENHUMA DAS PARTES COM RELAÇÃO A QUALQUER INCIDENTE ÚNICO OU SÉRIE
+            DE INCIDENTES RELACIONADOS DECORRENTES OU RELACIONADOS A ESTE
+            CONTRATO EXCEDERÁ O VALOR PAGO PELO CLIENTE NOS 12 (DOZE) MESES
+            ANTERIORES AO INCIDENTE OU SÉRIE DE INCIDENTES RELACIONADOS, DESDE
+            QUE EM NENHUMA HIPÓTESE A RESPONSABILIDADE TOTAL DE QUALQUER PARTE
+            DECORRENTE OU RELACIONADA A ESTE CONTRATO EXCEDER O VALOR TOTAL PAGO
+            PELO CLIENTE NESTE DOCUMENTO. AS LIMITAÇÕES ACIMA SERÃO APLICADAS SE
+            UMA AÇÃO ESTIVER EM CONTRATO OU ATO ILÍCITO E INDEPENDENTEMENTE DA
+            TEORIA DA RESPONSABILIDADE. A ISENÇÃO DE RESPONSABILIDADE ANTERIOR
+            NÃO SE APLICARÁ NA EXTENSÃO PROIBIDA POR LEI.
+          </p>
+          <p>
+            <span style="font-weight: bold">
+              6.2 Exclusão de Danos Consequenciais e Conexos.
+            </span>
+            EM NENHUM CASO QUALQUER PARTE TERÁ QUALQUER RESPONSABILIDADE PARA
+            COM A OUTRA POR QUAISQUER LUCROS CESSANTES, PERDAS E DANOS (SEJAM
+            DIRETOS, INDIRETOS OU INCIDENTAIS), DANOS EMERGENTES, SEJA UMA AÇÃO
+            CONTRATUAL OU ILÍCITA E INDEPENDENTEMENTE DA TEORIA DA
+            RESPONSABILIDADE, MESMO QUE UMA PARTE TENHA SIDO AVISADA DA
+            POSSIBILIDADE DE TAIS DANOS.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">7. UTILIZAÇÃO DOS SERVIÇOS</h2>
+          <p>
+            <span style="font-weight: bold"> 7.1 Assinaturas. </span>
+            Salvo disposição em contrário no processo de de Cadastro (Sign Up),
+            (a) os Serviços são adquiridos como assinaturas e (b) quaisquer
+            assinaturas adicionadas terminarão na mesma data do Prazo de
+            Assinatura, sujeitas a quaisquer renovações automáticas que possam
+            ser aplicadas conforme estabelecido abaixo na Seção 12.2 deste
+            Contrato.
+          </p>
+          <p>
+            <span style="font-weight: bold"> 7.2 Suspensão. </span>
+            Se a 313X tomar conhecimento de uma violação deste Contrato por um
+            Usuário, a 313X poderá solicitar especificamente que o Cliente
+            suspenda o uso dos Serviços por esse Usuário. Se o Cliente não
+            cumprir nossa solicitação de Suspender o uso dos Serviços por um
+            Usuário, a 313X poderá Suspender o uso dos Serviços por esse
+            Usuário. A duração de qualquer Suspensão pela 313X será até que o
+            Usuário aplicável tenha sanado a violação que causou a Suspensão.
+            Não obstante o acima exposto, se houver um Evento de Interrupção, a
+            313X poderá suspender automaticamente o uso ofensivo. A suspensão
+            terá a extensão mínima e a duração mínima necessária para prevenir
+            ou encerrar o Evento de Interrupção.
+          </p>
+          <p>
+            <span style="font-weight: bold"> 7.3 Privacidade. </span>
+            A 313X pode coletar informações pessoais relacionadas ao uso dos
+            Serviços pelo Cliente. A
+            <a href="https://313x.com.br/PrivacyPolicy.html" target="_blank"
+              ><span class="text-orange">Política de Privacidade</span></a
+            >
+            da 313X descreve quais dados são coletados, a finalidade da coleta,
+            os meios pelos quais a 313X processa esses dados e os terceiros com
+            quem os dados podem ser compartilhados. NA MEDIDA EM QUE O CLIENTE
+            FORNECE INFORMAÇÕES PESSOAIS À 313X, O CLIENTE DECLARA QUE CUMPRIU
+            TODAS AS LEIS DE PRIVACIDADE APLICÁVEIS ​​RELATIVAS À COLETA E
+            DIVULGAÇÃO DE TAIS INFORMAÇÕES. Com relação às informações pessoais
+            que recebe do Cliente ou Usuários, a 313X declara (a) que tem e
+            cumprirá independentemente todas as obrigações impostas pelas Leis
+            de Privacidade aplicáveis Controladores, (b) que não se considerará
+            um controlador conjunto com o Cliente e (c) que não dependerá do
+            Cliente para cumprir nenhuma das obrigações da 313X como
+            Controladora.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">
+            8. TAXAS E PAGAMENTO POR SERVIÇOS ADQUIRIDOS
+          </h2>
+          <p>
+            <span style="font-weight: bold"> 8.1 Taxas. </span>
+            O Cliente pagará todas as taxas especificadas no processo de
+            Cadastro (Sign Up). Exceto quando especificado de outra forma neste
+            documento, (i) as taxas são baseadas no Serviço adquirido e não no
+            uso real, (ii) as obrigações de pagamento não são canceláveis ​​e as
+            taxas pagas não são reembolsáveis, exceto conforme estabelecido na
+            Seção 12.2 deste Contrato.
+          </p>
+          <p>
+            <span style="font-weight: bold">
+              8.2 Faturamento e Pagamento.
+            </span>
+            As taxas devem ser faturadas antecipadamente, anualmente ou de
+            acordo com qualquer frequência de cobrança diferente indicada no
+            processo de Cadastro (Sign Up). Salvo disposição em contrário
+            durante o processo de Cadastro, os encargos faturados são devidos
+            após o recebimento de tal fatura, conforme previsão de pagamento
+            nela expresso. Quaisquer pagamentos não efetuados dentro de 30
+            (trinta) dias do recebimento de tal fatura incidirão juros à taxa de
+            1,5% do saldo devedor ao mês e . O Cliente é responsável por
+            fornecer informações completas e precisas de cobrança e contato à
+            313X e notificar a 313X sobre quaisquer alterações em tais
+            informações. O Cliente reconhece e concorda que a 313X pode
+            contratar processadores de pagamento terceirizados, incluindo a
+            Stripe e suas afiliadas, para processar pagamentos online feitos
+            pelo Cliente nos termos deste instrumento.
+          </p>
+          <p>
+            <span style="font-weight: bold"> 8.3 Cobranças Vencidas. </span>
+            Se qualquer valor faturado indiscutível não for recebido pela 313X
+            trinta (30) dias após a data da fatura, sem limitar nossos direitos
+            ou recursos a 313X pode exigir que o Cliente pague todas as
+            cobranças razoáveis ​​ou taxas legais incorridas pela 313X para
+            receber o pagamento do valor faturado não contestado correspondente.
+          </p>
+          <p>
+            <span style="font-weight: bold"> 8.4 Suspensão do Serviço. </span>
+            Se qualquer valor devido pelo Cliente sob este ou qualquer outro
+            contrato para Serviços estiver 30 (trinta) ou mais dias atrasado, a
+            313X poderá, sem limitar outros direitos e recursos, cobrar as
+            obrigações de taxas não pagas do Cliente sob tais contratos para que
+            todas essas obrigações se tornem imediatamente devidos e a pagar, e
+            suspender os Serviços ao Cliente até que tais valores sejam pagos
+            integralmente. A 313X notificará o Cliente com pelo menos 10 dias de
+            antecedência, antes de suspender os Serviços ao Cliente.
+          </p>
+          <p>
+            <span style="font-weight: bold"> 8.5 Impostos. </span>
+            Nossas taxas não incluem quaisquer impostos, taxas, impostos ou
+            avaliações governamentais semelhantes de qualquer natureza,
+            incluindo, por exemplo, impostos sobre valor agregado, vendas, uso
+            ou retenção na fonte, tributáveis ​​por qualquer jurisdição
+            (coletivamente, “Impostos”). O Cliente é responsável pelo pagamento
+            de todos os Impostos associados às suas compras. Se a 313X tiver a
+            obrigação legal de pagar ou recolher Impostos pelos quais o Cliente
+            seja responsável, a 313X faturará o Cliente e o Cliente pagará esse
+            valor, a menos que o Cliente forneça à 313X um certificado de
+            isenção fiscal válido autorizado pela autoridade tributária
+            apropriada. Para maior clareza, a 313X é a única responsável pelos
+            tributos sobre a própria 313X com base no regime fiscal que nos é
+            aplicável no território brasileiro.
+          </p>
+          <p>
+            <span style="font-weight: bold"> 8.6 Funcionalidade Futura. </span>
+            O Cliente concorda que suas compras não dependem da entrega de
+            qualquer funcionalidade ou recursos futuros, nem dependem de
+            comentários públicos orais ou escritos feitos pela 313X sobre
+            funcionalidades ou recursos futuros.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">9. CONFIDENCIALIDADE</h2>
+          <p>
+            <span style="font-weight: bold"> 9.1 Definição. </span>
+            “Informações Confidenciais” significa todas as informações e
+            materiais divulgados por uma parte (“ Parte Divulgadora ”) à outra
+            parte (“ Parte Receptora”), verbalmente ou por escrito, que seja
+            designado como confidencial ou que razoavelmente deva ser entendido
+            como confidencial, dada a natureza da informação e as circunstâncias
+            da divulgação. As Informações Confidenciais da 313X incluem os
+            Serviços e quaisquer materiais proprietários fornecidos por meio dos
+            Serviços; As Informações Confidenciais do Cliente incluem
+            Informações Fornecidas e Conteúdos Gerados pelo Cliente; e
+            Informações Confidenciais de cada parte incluem planos de negócios e
+            marketing, tecnologia e informações técnicas, planos e projetos de
+            produtos e processos de negócios divulgados por tal parte. No
+            entanto, as Informações Confidenciais não incluem qualquer
+            informação que seja ou se torne de conhecimento geral do público sem
+            violação de qualquer obrigação devida à Parte Divulgadora.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >9.2 Proteção de Informações Confidenciais.
+            </span>
+            A Parte Receptora (i) usará o mesmo grau de cuidado que usa para
+            proteger a confidencialidade de suas próprias informações
+            confidenciais de tipo semelhante (mas não menos do que o cuidado
+            razoável), (ii) não usará nenhuma Informação Confidencial da Parte
+            Divulgadora para qualquer finalidade fora do escopo deste Contrato,
+            e (ii) exceto conforme autorizado pela Parte Divulgadora por
+            escrito, divulgar Informações Confidenciais da Parte Divulgadora
+            apenas para seus funcionários, executivos, consultores, contratados
+            e agentes e suas Afiliadas funcionários, executivos, consultores,
+            contratados e agentes que precisam desse acesso para fins
+            consistentes com este Contrato e que estão sujeitos a obrigações de
+            confidencialidade consistentes com este Contrato. A Parte Receptora
+            é totalmente responsável pelo cumprimento de seus funcionários,
+            diretores, conselheiros e contratados.
+          </p>
+          <p>
+            <span style="font-weight: bold">9.3 Divulgação Obrigatória. </span>
+            A Parte Receptora pode divulgar Informações Confidenciais da Parte
+            Divulgadora na medida em que for obrigada por lei ou por ordem de um
+            tribunal ou órgão judicial ou administrativo semelhante, desde que a
+            Parte Receptora dê à Parte Divulgadora aviso prévio da divulgação
+            obrigatória (para na medida legalmente permitida) e assistência
+            razoável, às custas da Parte Divulgadora, se a Parte Divulgadora
+            desejar contestar a divulgação.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">10. MODIFICAÇÕES DE PRODUTOS E SERVIÇOS</h2>
+          <p>
+            <span style="font-weight: bold"
+              >10.1 Atualizações, Interrupções e Substituição.
+            </span>
+            O Licenciado reconhece e aceita que, durante a vigência do presente
+            Contrato de Licença, a 313X poderá enviar ao Licenciado
+            automaticamente uma atualização do(s) softwares(s) que o Licenciado
+            esteja usando, para que os softwares da 313X se adaptem aos avanços
+            tecnológicos e sejam aperfeiçoados. Alternativamente, a 313X poderá
+            interromper o desenvolvimento de quaisquer Serviços e substituí-los
+            por outros. Nessas circunstâncias, o Licenciado será notificado pela
+            313X. AO ACEITAR ESTE CONTRATO DE LICENÇA, O LICENCIADO ACEITA TODAS
+            AS MODIFICAÇÕES E CARACTERÍSTICAS DOS SERVIÇO DECORRENTES DE NOVOS
+            DESENVOLVIMENTOS E ATUALIZAÇÕES.
+          </p>
+        </div>
+        <div class="text2">
+          <h2 class="subHeader">11. AMBIENTES DE ALTO RISCO</h2>
+          <p>
+            <span style="font-weight: bold">11.1 Não aplicação de uso. </span>
+            Especificamente o software 313X |TPCRM não foi projetado nem se
+            destina ao uso em ambientes perigosos que exijam desempenho à prova
+            de falhas, como nas operações em instalações nucleares, sistemas de
+            navegação aérea ou de comunicações, controle de tráfego aéreo, armas
+            ou sistemas de defesa, sistemas de preservação da vida ou qualquer
+            outro contexto em que a falha do software possa acarretar morte,
+            ferimentos ou danos sérios a bens ou ao ambiente. A 313X rejeita
+            qualquer garantia expressa ou implícita na adequabilidade dos
+            aplicativos a esses tipos de atividades.
+          </p>
+        </div>
+        <div class="text2">
+          <p class="subHeader">12. PRAZO E RESCISÃO</p>
+          <p>
+            <span style="font-weight: bold"> 12.1 Termo de acordo. </span>
+            Este Contrato começa na Data de Vigência estabelecida na página de
+            assinatura e continua enquanto a 313X estiver fornecendo os
+            Serviços.
+          </p>
+          <p>
+            <span style="font-weight: bold">
+              12.2 Prazo das Assinaturas (AUTO-RENOVAÇÃO DO PRAZO DE
+              ASSINATURA).
+            </span>
+            O Prazo de Assinatura será, e será renovado, conforme especificado
+            no processo de Cadastro (Sign Up). Se nenhum prazo ou período de
+            renovação for especificado, as Assinaturas terão um prazo inicial de
+            um ano e serão renovadas automaticamente por períodos adicionais
+            iguais ao Prazo de Assinatura expirando ou um 01 (um) ano (o que for
+            menor), a menos que uma das partes dê à outra aviso de não renovação
+            pelo menos 30 (trinta) dias antes do final do Prazo de Assinatura
+            pelo endereço <span class="text-orange">contato@313x.com.br</span>.
+          </p>
+          <p>
+            <span style="font-weight: bold">12.3 Encerramento. </span>
+            Este Contrato poderá ser rescindido por qualquer uma das Partes nos
+            seguintes casos: (i) a qualquer tempo, independentemente de motivo
+            justificado, mediante simples notificação por escrito à outra Parte,
+            com aviso prévio de 30 (trinta) dias; (ii) caso qualquer uma das
+            Partes viole ou descumpra os termos e condições deste Contrato e
+            deixe de sanar integralmente este descumprimento no prazo de 30
+            (trinta) dias, a contar do recebimento de notificação enviada pela
+            outra Parte neste sentido, sendo que a Parte inadimplente arcará com
+            todos os danos diretos devidamente comprovados e provocados pelo seu
+            descumprimento, excluindo-se desta as hipóteses comprovadas de caso
+            fortuito ou força maior; e/ou (iii) caso seja feito qualquer pedido
+            de falência, recuperação judicial ou extrajudicial, ou liquidação
+            extrajudicial da outra Parte.
+          </p>
+          <p>
+            <span style="font-weight: bold">12.4 Rescisão Antecipada. </span>
+            Por ocasião e na hipótese de rescisão antecipada, o Cliente se
+            obriga a: (a) devolver imediatamente à 313X todo o conteúdo de
+            propriedade intelectual exclusivo da 313X que pertença à mesma,
+            incluindo quaisquer cópias, versões, ou trabalhos derivados; e (c)
+            pagar à 313X toda e qualquer remuneração já devida e que esteja
+            pendente de pagamento.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >12.5 Informações Fornecidas e Documentos Gerados pelo Licenciado.
+            </span>
+            Após a data efetiva de rescisão ou expiração deste Contrato, a 313X
+            não terá nenhuma obrigação de manter ou fornecer quaisquer
+            informações ou documentos ao Cliente e poderá, a seu exclusivo
+            critério, excluir ou destruir todas as cópias relacionadas às
+            informações e documentos do Cliente em nossos sistemas ou de outra
+            forma em nossa posse ou controle, a menos que legalmente proibido.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >12.6 Direitos e Obrigações Permanentes.
+            </span>
+            As Seções que, por sua natureza, devem sobreviver à rescisão ou
+            expiração, sobreviverão a qualquer rescisão ou expiração deste
+            Contrato.
+          </p>
+        </div>
+        <div class="text2">
+          <p class="subHeader">13. DISPOSIÇÕES GERAIS</p>
+          <p>
+            <span style="font-weight: bold">13.1 Representações. </span>
+            Cada parte declara que celebrou validamente este Contrato e tem o
+            poder legal para fazê-lo.
+          </p>
+          <p>
+            <span style="font-weight: bold"> 13.2 Acordo Integral. </span>
+            Este Contrato é o instrumento integral entre o Cliente e a 313X em
+            relação ao uso dos Serviços pelo Cliente e substitui todos os
+            acordos, propostas ou representações anteriores e contemporâneos,
+            escritos ou verbais, relativos ao assunto em questão (incluindo
+            qualquer contrato de confidencialidade entre o Cliente e 313X onde o
+            único propósito era avaliar a subscrição abaixo). Nenhuma renúncia
+            de qualquer disposição deste Contrato será efetiva a menos que por
+            escrito e assinada pela parte contra a qual a renúncia deve ser
+            declarada.
+          </p>
+          <p>
+            <span style="font-weight: bold">13.3 Atribuição. </span>
+            Nenhuma das partes pode ceder quaisquer de seus direitos ou
+            obrigações aqui descritos, seja por força de lei ou de outra forma,
+            sem o consentimento prévio por escrito da outra parte (não deve ser
+            retido injustificadamente); desde que, no entanto, qualquer uma das
+            partes possa ceder este Contrato em sua totalidade (incluindo todos
+            os Formulários de Pedido e SOWs abaixo), sem o consentimento da
+            outra parte para sua Afiliada ou em conexão com uma fusão,
+            aquisição, reorganização corporativa ou venda de todos ou
+            substancialmente todos de seus ativos ou títulos patrimoniais. Não
+            obstante o acima exposto, se uma parte for adquirida, vender
+            substancialmente todos os seus ativos ou sofrer uma mudança de
+            controle em favor de um concorrente direto da outra parte, essa
+            outra parte poderá rescindir este Contrato mediante notificação por
+            escrito.
+          </p>
+          <p>
+            <span style="font-weight: bold">13.4 Relação das Partes. </span>
+            As partes são contratantes independentes. Este Contrato não cria uma
+            parceria, franquia, joint venture, agência, fiduciário ou relação de
+            emprego entre as partes.
+          </p>
+          <p>
+            <span style="font-weight: bold"
+              >13.5 Beneficiários Terceiros.
+            </span>
+            As partes não pretendem criar quaisquer terceiros beneficiários
+            deste Contrato, e nada neste Contrato se destina, nem qualquer coisa
+            aqui deve ser interpretada para criar quaisquer direitos, legais ou
+            equitativos, em qualquer pessoa que não as Partes deste Contrato.
+          </p>
+          <p>
+            <span style="font-weight: bold">13.6 Renúncia. </span>
+            Nenhuma falha ou atraso de qualquer das partes no exercício de
+            qualquer direito sob este Contrato constituirá uma renúncia a esse
+            direito. A 313X retém expressamente todos os outros direitos que
+            possa ter e que não se encontrem aqui concedidos ao Licenciado.
+          </p>
+          <p>
+            <span style="font-weight: bold">13.7 Separabilidade. </span>
+            Caso alguma disposição ou cláusula deste Contrato de Licença seja
+            contrária à lei, esta será considerada nula sem que isso afete ou
+            suponha a nulidade da totalidade do Contrato de Licença.
+          </p>
+          <p>
+            <span style="font-weight: bold">13.8 Força Maior. </span>
+            Exceto pelas obrigações de pagamento, nenhuma das partes será
+            responsável pelo desempenho inadequado causado por uma condição (por
+            exemplo, desastre natural, ato de guerra ou terrorismo, motim,
+            condição trabalhista, ação governamental, pandemia, epidemia,
+            restrição de quarentena e perturbação da Internet) que estava além
+            do controle razoável da parte.
+          </p>
+          <p>
+            <span style="font-weight: bold">13.9 Competência. </span>
+            Este Contrato de Licença será regido pelas leis vigentes na
+            República Federativa do Brasil. Para todos os assuntos referentes à
+            sua interpretação e cumprimento, as partes submeter-se-ão ao Foro
+            Central da Cidade de São Paulo/SP. Ambas as partes renunciam a
+            qualquer outro foro que lhes possa corresponder.
+          </p>
+          <p>
+            O Licenciado concorda que, ao aceitar o presente Contrato de Licença
+            e utilizar os Serviços, aceitou também todos os termos e condições
+            da
+            <a href="https://313x.com.br/PrivacyPolicy.html" target="_blank"
+              ><span class="text-orange">Política de Privacidade</span></a
+            >
+            e
+            <a href="https://313x.com.br/Saas.html" target="_blank"
+              ><span class="text-orange">Termos de Uso</span></a
+            >. da 313X.
+          </p>
+        </div>
+      </section>
+      <section class="footer-section" id="contact">
+        <div class="trusted">
+          <div>
+            <div class="footer-wrapper">
+              <div class="company-footer">
+                <a href="./index.html" class="company-header">A Empresa</a>
+                <div class="company-wrapper">
+                  <a class="solutions-text" href="./index.html#about"
+                    >Sobre a 313X</a
+                  >
+                  <a class="solutions-text" href="./index.html#incident"
+                    >Ciclo de Gerenciamento do Incidente</a
+                  >
+                  <a class="solutions-text" href="./index.html#industries"
+                    >Indústrias</a
+                  >
+                  <a class="solutions-text" href="#contact">Converse Conosco</a>
+                </div>
+              </div>
+              <div class="solutions-footer">
+                <a href="./Prevencao.html" class="solutions-header"
+                  >Prevenção</a
+                >
+                <div class="solutions-wrapper">
+                  <a class="prevention-text" href="./Prevencao.html#security"
+                    >Avaliação de Segurança</a
+                  >
+                  <a class="prevention-text" href="./Prevencao.html#pentest"
+                    >Pentest</a
+                  >
+                  <a class="prevention-text" href="./Prevencao.html#redTeaming"
+                    >Simulação de Ataque</a
+                  >
+                  <a class="prevention-text" href="./Prevencao.html#consulting"
+                    >Consultoria e Auditoria</a
+                  >
+                </div>
+              </div>
+              <div class="services-footer">
+                <a href="./RespostaInvestigacao.html" class="services-header"
+                  >Resposta & Investigação</a
+                >
+                <div class="services-wrapper">
+                  <a
+                    class="prevention-text"
+                    href="./RespostaInvestigacao.html#IncidentResponse"
+                    >Resposta a Incidentes</a
+                  >
+                  <a
+                    class="prevention-text"
+                    href="./RespostaInvestigacao.html#incidentInvestigation"
+                    >Investigação Cibernética</a
+                  >
+                  <a
+                    class="prevention-text"
+                    href="./RespostaInvestigacao.html#malware"
+                    >Forense Digital e Análise de Malware</a
+                  >
+                </div>
+              </div>
+              <div class="products-footer">
+                <a class="products-header" href="./Produtos.html">Produtos</a>
+                <div class="services-wrapper">
+                  <a class="prevention-text" href="./Produtos.html#why313"
+                    >Por quê 313X | TPCRM?</a
+                  >
+                  <a class="prevention-text" href="./Produtos.html#313cases"
+                    >Casos de Uso da 313X | TPCRM</a
+                  >
+                  <a class="prevention-text" href="./Produtos.html#empower"
+                    >Otimize sua cibersegurança
+                  </a>
+                </div>
+              </div>
+
+              <div class="lang-footer">
+                <div>
+                  <svg
+                    class="globe-footer"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <a class="lang-text-footer" href="./Saas-en.html">English</a>
+                </div>
+              </div>
+            </div>
+            <div class="logo-footer">
+              <div class="img-footer-wrapper">
+                <div class="policy-wrapper">
+                  <!--<img class="linkedin-logo" src="./img/linkedin.png" />-->
+                  <a
+                    href="https://www.linkedin.com/company/313xcybersecurity/"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                      class="linkedin-logo"
+                    >
+                      <path
+                        fill="white"
+                        d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                        class=""
+                      ></path>
+                    </svg>
+                  </a>
+                  <div class="policy-saas-wrapper">
+                    <a href="./PrivacyPolicy.html"
+                      ><p class="saas">Política de Privacidade</p></a
+                    >
+                    <a href="./Saas.html"
+                      ><p class="policy">Contrato de Licença</p></a
+                    >
+                  </div>
+                </div>
+                <div class="logoImg-wrapper">
+                  <img
+                    class="logoImg-footer"
+                    src="./img/313footer.png"
+                    alt="313x logo footer"
+                  />
+                </div>
+              </div>
+              <div class="span-rights">
+                <span class="rights-reserved"
+                  >2022 313X - Todos os direitos reservados</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+      function openDivNavbar() {
+        if (document.getElementById('navbar-sm').style.display === 'none') {
+          document.getElementById('navbar-sm').style.display = 'block';
+        } else {
+          document.getElementById('navbar-sm').style.display = 'none';
+        }
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

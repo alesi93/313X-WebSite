@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>313X - Cyber Investigations & Disputes</title>
+    <link rel="icon" type="image/x-icon" href="./img/313Fav.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=PT+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        line-height: 1.6;
+        color: #081824;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 1px;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+
+      a:visited {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      a:active {
+        text-decoration: none;
+      }
+      li {
+        line-height: 1.3;
+      }
+      .home {
+        width: 100%;
+        height: 100%;
+        /* CSS Smooth Scroll */
+        overflow-y: visible;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+      }
+      section {
+        width: 100%;
+        height: auto;
+        /* Scroll Snap */
+        scroll-snap-align: center;
+      }
+      .homePage {
+        background-image: url('./img/fundo.png');
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover;
+        padding: 150px;
+        height: 100vh;
+      }
+      .navBar {
+        margin-bottom: 200px;
+        position: fixed;
+        background-color: #081824;
+        width: 100%;
+        padding-top: 20px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 145px;
+        padding-right: 150px;
+      }
+      .logo {
+        height: 7vh;
+      }
+      .items {
+        align-self: center;
+        display: flex;
+        align-items: baseline;
+      }
+      .items-nav {
+        font-size: 20px;
+        color: #808080;
+        cursor: pointer;
+      }
+      .items-nav:hover {
+        color: white;
+      }
+
+      .arrow-down {
+        height: 30px;
+        width: 30px;
+        display: none;
+      }
+      /* .wrapper-items-nav {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+      } */
+
+      .dropdown-company,
+      .dropdown-prevention,
+      .dropdown-responseInvestigation,
+      .dropdown-products,
+      .dropdown-lang {
+        display: none;
+        position: absolute;
+        background-color: #081824;
+        min-width: 160px;
+        padding: 12px 16px;
+        z-index: 1;
+        border-radius: 5px;
+        color: white;
+      }
+      .company,
+      .prevention,
+      .products,
+      .responseInvestigation {
+        margin-right: 30px;
+      }
+      #company {
+        border-bottom: solid #fba32e;
+        padding-bottom: 10px;
+      }
+      .company:hover .dropdown-company,
+      .company:hover .arrow-up,
+      .company:hover .arrow-down {
+        display: block;
+      }
+      .responseInvestigation:hover .dropdown-responseInvestigation {
+        display: block;
+      }
+      .solutions:hover .dropdown-solutions,
+      .solutions:hover .arrow-up {
+        display: block;
+      }
+      .prevention:hover .dropdown-prevention,
+      .prevention:hover .arrow-up {
+        display: block;
+      }
+      .products:hover .dropdown-products,
+      .products:hover .arrow-up {
+        display: block;
+      }
+      .lang:hover .dropdown-lang {
+        display: block;
+      }
+      /* .arrow-up {
+        width: 11px;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        display: none;
+        border-bottom: 8px solid white;
+        margin-left: 10px;
+      } */
+
+      .contactUs {
+        color: #081824;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #fba32e;
+        padding: 5px 20px 5px 20px;
+      }
+      .contactUs:hover {
+        color: white;
+      }
+      .contactUsBig {
+        color: white;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #fba32e;
+        padding: 20px 40px 20px 40px;
+      }
+      .contactUsBig:hover {
+        color: #081824;
+      }
+      .subTitleBig {
+        font-size: 50px;
+        color: white;
+        font-weight: regular;
+        text-align: left;
+        font-family: 'PT Sans', sans-serif;
+        letter-spacing: 2px;
+      }
+      .subTitle {
+        font-size: 30px;
+        color: rgb(206, 204, 204);
+      }
+
+      .buttonsHome {
+        display: flex;
+        justify-content: start;
+      }
+      .servicesBtn {
+        padding: 10px;
+        width: 170px;
+        background-color: #081824;
+        color: white;
+        border: solid 1px white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .service-wrapper {
+        padding: 50px 0px 50px 0px;
+      }
+      .aboutBtn {
+        padding: 10px;
+        width: 170px;
+        background-color: #fba32e;
+        color: #081824;
+        border: solid 1px #fba32e;
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .aboutBtn:hover,
+      .servicesBtn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .items-dropdown {
+        color: white;
+        display: block;
+        cursor: pointer;
+        font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .items-dropdown:hover {
+        color: #fba32e;
+      }
+      .aboutDiv-wrapper {
+        display: flex;
+        padding: 100px 200px 100px 150px;
+        justify-content: center;
+      }
+      /* .aboutDiv-left {
+        width: 50%;
+      }
+      .aboutDiv-right {
+        width: 50%;
+      } */
+      .logoAbout {
+        width: 100px;
+        height: 43px;
+        align-self: center;
+        margin-left: 5px;
+      }
+      .about-header {
+        color: #fba32e;
+        font-weight: bold;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      .about-wrapper {
+        display: flex;
+        margin-bottom: 40px;
+      }
+      .about-text {
+        font-size: 50px;
+        font-family: 'PT Sans', sans-serif;
+      }
+      .about-1,
+      .about-2,
+      .about-3 {
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+      .list {
+        font-size: 20px;
+        padding-left: 40px;
+      }
+      .plans-wrapper {
+        padding: 200px 200px 50px 200px;
+      }
+      .selection-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 100px;
+      }
+      .chevron-down {
+        height: 100px;
+        width: 100px;
+        color: #fba32e;
+        text-align: center;
+        cursor: pointer;
+      }
+      .header-wrapper {
+        color: #081824;
+        padding: 100px 22vh 100px 150px;
+      }
+      .header,
+      .header-incident,
+      .header-malware {
+        font-size: 50px;
+        margin-bottom: 20px;
+        font-family: 'PT Sans', sans-serif;
+        margin-bottom: 5px;
+      }
+
+      .header-text {
+        font-size: 20px;
+        color: #fba32e;
+        font-weight: bold;
+      }
+      .high-tech {
+        font-size: 20px;
+        color: white;
+        padding-top: 20px;
+        font-weight: normal;
+      }
+      .list-item {
+        font-size: 20px;
+      }
+      .list-item-white {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .item-list {
+        color: #081824;
+        font-size: 20px;
+      }
+      .item-list-white {
+        color: white;
+        font-size: 20px;
+      }
+      .list {
+        padding-left: 50px;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+      .section-service {
+        background-color: #081824;
+        color: white;
+      }
+      .section-services {
+        padding: 100px 10vh 100px 150px;
+      }
+      .service-header {
+        font-size: 50px;
+        color: white;
+        font-family: 'PT Sans', sans-serif;
+        margin-bottom: 5px;
+      }
+      .service-text {
+        font-size: 20px;
+        color: white;
+        color: #fba32e;
+        font-weight: bold;
+      }
+      .service-text-compliance {
+        font: size 20px;
+        color: white;
+        padding: 20px 0px 20px 0px;
+      }
+      .service-question {
+        font-size: 30px;
+      }
+      .service-subHeader {
+        color: #fba32e;
+        font-size: 18px;
+      }
+      .selection-header {
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: 'PT Sans', sans-serif;
+      }
+      .selection-text {
+        color: #081824;
+        font-size: 18px;
+        font-weight: regular;
+        text-align: center;
+      }
+      .redTeaming {
+        background-color: white;
+      }
+      .consulting {
+        background-color: #081824;
+      }
+      .redTeam-header {
+        font-size: 50px;
+        color: #081824;
+        font-family: 'PT Sans', sans-serif;
+      }
+      .what-deliver {
+        font-size: 30px;
+        color: #081824;
+      }
+      .plan-header {
+        font-size: 30px;
+        font-weight: regular;
+        text-align: center;
+        font-family: 'PT Sans', sans-serif;
+      }
+      .plan-text-wrapper {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        color: #081824;
+        font-weight: light;
+      }
+      .plan-learn {
+        text-align: center;
+        color: #fba32e;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      .incident {
+        margin-bottom: 50px;
+      }
+      .trusted {
+        padding-top: 100px;
+        background: #eeebea;
+      }
+      .div-contactUs {
+        text-align: center;
+        padding: 100px;
+      }
+      .contactUs-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 50px 115px 50px 0px;
+      }
+      .contactUs-header {
+        font-size: 50px;
+        color: #081824;
+        font-weight: bold;
+        font-family: 'PT Sans', sans-serif;
+      }
+
+      .phone-header,
+      .email-header,
+      .headquarters-header {
+        font-size: 30px;
+        color: #fba32e;
+        font-weight: bold;
+      }
+      .phone-text,
+      .email-text,
+      .headquarters-text {
+        color: #081824;
+        font-size: 30px;
+      }
+
+      .trusted-wrapper {
+        text-align: center;
+      }
+      .trusted-img {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 150px;
+      }
+      .trusted-header {
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: white;
+        font-weight: bold;
+      }
+      .escudo1 {
+        height: 150px;
+        width: 150px;
+        margin-right: 30px;
+      }
+      .escudo2 {
+        height: 150px;
+        width: 150px;
+        margin-right: 30px;
+        margin-left: 30px;
+      }
+      .escudo3 {
+        height: 150px;
+        width: 150px;
+        margin-left: 30px;
+      }
+      .footer-section {
+        background-image: url('./img/fundo.png');
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover;
+      }
+      .arrowUp {
+        height: 80px;
+        width: 100px;
+        color: #fba32e;
+        margin-bottom: 100px;
+      }
+      .footer-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        background: #081824;
+        padding: 100px 0px 100px 65px;
+      }
+      .services-wrapper,
+      .solutions-wrapper,
+      .products-wrapper,
+      .company-wrapper {
+        display: grid;
+        color: rgb(206, 204, 204);
+        padding: 5px;
+      }
+      .services-header,
+      .products-header,
+      .solutions-header,
+      .company-header {
+        font-size: 30px;
+        color: white;
+      }
+      .solutions-text,
+      .prevention-text,
+      .products-text {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: white;
+      }
+      .solutions-text:hover,
+      .prevention-text:hover,
+      .products-text:hover {
+        color: #fba32e;
+        cursor: pointer;
+      }
+
+      .rights-reserved {
+        font-size: 10px;
+        text-align: right;
+        padding-right: 25px;
+        color: white;
+      }
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+      .navbar-sm {
+        display: none;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .header-sm {
+        display: none;
+      }
+      .lang-footer {
+        display: none;
+      }
+      .logo-footer {
+        background-color: #081824;
+        padding-left: 195px;
+        padding-right: 106px;
+        padding-bottom: 20px;
+      }
+      .img-footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+      }
+      .policy-wrapper {
+        display: flex;
+      }
+      .linkedin-logo {
+        height: 4vh;
+      }
+      .saas {
+        padding-right: 20px;
+        padding-left: 20px;
+        color: white;
+      }
+      .policy {
+        color: white;
+      }
+
+      .policy:hover,
+      .saas:hover {
+        color: #fba32e;
+      }
+
+      .policy-saas-wrapper {
+        display: flex;
+        align-items: end;
+      }
+      .logoImg-footer {
+        height: 5vh;
+        align-self: flex-end;
+      }
+      .span-rights {
+        text-align: end;
+      }
+
+      @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        .homePage {
+          padding: 0px;
+        }
+        .navbar-sm {
+          margin-bottom: 200px;
+          position: fixed;
+          background-color: #081824;
+          width: 100%;
+          padding-top: 20px;
+          padding-left: 20px;
+        }
+        .hamburger {
+          display: block;
+          align-self: center;
+          height: 60px;
+        }
+        .items {
+          display: none;
+        }
+        .hamburger-icon {
+          height: 50px;
+          width: 50px;
+          color: #fba32e;
+          text-align: right;
+        }
+        .nav {
+          display: flex;
+          justify-content: space-between;
+          padding-left: 30px;
+          padding-right: 30px;
+          align-items: center;
+        }
+        .logo {
+          height: 5vh;
+          align-self: center;
+        }
+        .items-nav {
+          padding-bottom: 5px;
+        }
+
+        .subTitleBig {
+          font-size: 32px;
+          color: white;
+          font-weight: regular;
+          text-align: left;
+          font-family: 'PT Sans', sans-serif;
+          letter-spacing: 2px;
+        }
+        .subTitle {
+          font-size: 18px;
+          color: rgb(206, 204, 204);
+          text-align: left;
+          padding: 5px;
+        }
+        .header-wrapper {
+          color: #081824;
+          padding: 30px;
+        }
+        .header-sm {
+          display: block;
+          padding: 0px 30px 30px 30px;
+        }
+        .header {
+          display: none;
+        }
+        .header-incident {
+          font-size: 32px;
+        }
+        .header-text {
+          font-size: 20px;
+        }
+        .header-malware {
+          font-size: 32px;
+        }
+        .service-question {
+          font-size: 20px;
+        }
+        .list {
+          font-size: 15px;
+          padding-left: 20px;
+          padding-right: 30px;
+        }
+        .list-item {
+          margin-bottom: 10px;
+          font-size: 12px;
+        }
+        .section-services {
+          padding: 30px;
+        }
+        .buttonsHome {
+          padding: 0px 10px 20px 10px;
+        }
+        .about-header {
+          color: #fba32e;
+          font-weight: bold;
+          font-size: 30px;
+          margin-top: 50px;
+          margin-bottom: 50px;
+          padding: 0px 20px 0px 20px;
+        }
+        .aboutDiv-wrapper {
+          display: flex;
+          padding: 0px;
+          justify-content: center;
+        }
+        .about-wrapper {
+          display: flex;
+          margin-bottom: 40px;
+          margin-left: 20px;
+        }
+        .about-1,
+        .about-2,
+        .about-3 {
+          font-size: 15px;
+          padding: 10px 20px 10px 20px;
+        }
+        .selection-header {
+          font-size: 30px;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .service-header {
+          font-size: 32px;
+        }
+        .service-text {
+          font-size: 20px;
+        }
+        .plans-wrapper {
+          padding: 0px;
+        }
+        .selections {
+          padding: 20px;
+        }
+        .selection-div {
+          width: auto;
+          margin: 50px 20px 50px 20px;
+        }
+        .selection-wrapper {
+          display: block;
+          padding: 50px 20px 50px 20px;
+        }
+        .service-wrapper {
+          padding: 25px 0px 25px 0px;
+        }
+        .service-wrapper-how {
+          padding: 0px 0px 25px 0px;
+        }
+        .high-tech {
+          font-size: 12px;
+          color: white;
+          padding-top: 0px;
+        }
+        .contactUsBig {
+          padding: 10px;
+          width: 135px;
+          background-color: #fba32e;
+          color: white;
+          border: solid 1px white;
+          font-size: 15px;
+          font-weight: bold;
+          margin-right: 10px;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .escudo1 {
+          height: 50px;
+          width: 50px;
+          margin-right: 20px;
+        }
+        .escudo2 {
+          height: 50px;
+          width: 50px;
+          margin-right: 20px;
+          margin-left: 20px;
+        }
+        .escudo3 {
+          height: 50px;
+          width: 50px;
+          margin-left: 20px;
+        }
+        .solutions-footer,
+        .services-footer,
+        .products-footer,
+        .company-footer {
+          display: none;
+        }
+        .div-contactUs {
+          text-align: center;
+          padding: 20px;
+        }
+        .contactUs-wrapper {
+          display: block;
+          margin: 50px 0px 50px 0px;
+        }
+        .contactUs-header {
+          font-size: 30px;
+          color: white;
+          font-weight: bold;
+          padding-left: 0px;
+        }
+        .contact-headquarters,
+        .contact-email,
+        .contact-phone {
+          padding: 40px 0px 40px 0px;
+        }
+        .rights-reserved {
+          padding-right: 0px;
+          padding-left: 10px;
+          padding-top: 20px;
+          text-align: center;
+        }
+        .globe-footer {
+          color: #808080;
+          height: 35px;
+          padding-right: 5px;
+          color: #fba32e;
+        }
+
+        .lang-text-footer {
+          font-size: 12px;
+          color: #eeebea;
+        }
+        .footer-wrapper {
+          display: block;
+          text-align: center;
+          color: white;
+          background: #081824;
+          padding: 50px 0px 50px 0px;
+        }
+        .lang-footer {
+          display: block;
+          justify-content: center;
+          align-items: center;
+          padding-left: 0px;
+          justify-content: center;
+        }
+        .logo-footer {
+          background-color: #081824;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-bottom: 20px;
+        }
+        .img-footer-wrapper {
+          display: block;
+          color: white;
+        }
+        .policy-wrapper {
+          display: block;
+          text-align: center;
+        }
+        .linkedin-logo {
+          height: 5vh;
+          padding-left: 0px;
+          margin-bottom: 20px;
+        }
+        .policy-saas-wrapper {
+          display: block;
+          align-items: center;
+          padding-bottom: 50px;
+        }
+        .logoImg-wrapper {
+          text-align: center;
+        }
+        .logoImg-footer {
+          height: 5vh;
+          align-self: center;
+        }
+        .span-rights {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navBar">
+      <nav>
+        <div class="nav">
+          <div style="padding-bottom: 10px">
+            <a href="./index-en.html">
+              <img
+                class="logo animated fadeInLeft"
+                src="./img/313logo.png "
+                alt="313x logo"
+              />
+            </a>
+          </div>
+          <div class="hamburger animated fadeInRight">
+            <svg
+              onclick="openDivNavbar()"
+              xmlns="http://www.w3.org/2000/svg"
+              class="hamburger-icon"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+
+          <div class="items">
+            <div class="company">
+              <a class="items-nav" href="./index-en.html">Company</a>
+
+              <!-- <div
+                class="arrow-up animate__animated animate__fadeIn"
+              ></div> -->
+              <div class="dropdown-company animated fadeIn">
+                <a class="items-dropdown" href="./index-en.html#about"
+                  >About 313x</a
+                >
+                <a class="items-dropdown" href="./index-en.html#incident"
+                  >Full Cycle of Incident Management</a
+                >
+                <a class="items-dropdown" href="./index-en.html#industries"
+                  >Industries</a
+                >
+                <a class="items-dropdown" href="./index-en.html#contact"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+            <div class="prevention">
+              <a class="items-nav" href="./Prevention.html">Prevention</a>
+              <div class="dropdown-prevention animated fadeIn">
+                <a class="items-dropdown" href="./Prevention.html#security"
+                  >Security Assessment</a
+                >
+                <a class="items-dropdown" href="./Prevention.html#pentest"
+                  >Penetration Testing</a
+                >
+                <a class="items-dropdown" href="./Prevention.html#redTeaming"
+                  >Red Teaming</a
+                >
+                <a class="items-dropdown" href="./Prevention.html#consulting"
+                  >Consulting and Compliance Audit</a
+                >
+              </div>
+            </div>
+            <div class="responseInvestigation" id="company">
+              <a class="items-nav" href="./ResponseInvestigation.html"
+                >Response & Investigation</a
+              >
+              <div class="dropdown-responseInvestigation animated fadeIn">
+                <a
+                  class="items-dropdown"
+                  href="./ResponseInvestigation.html#IncidentResponse"
+                  >Incident Response</a
+                >
+                <a
+                  class="items-dropdown"
+                  href="./ResponseInvestigation.html#incidentInvestigation"
+                  >Cyber Investigation</a
+                >
+                <a
+                  class="items-dropdown"
+                  href="./ResponseInvestigation.html#malware"
+                  >Digital Forensics and Malware Analysis</a
+                >
+              </div>
+            </div>
+
+            <div class="products">
+              <a class="items-nav" href="./Products.html">Products</a>
+              <div class="dropdown-products animated fadeIn">
+                <a class="items-dropdown" href="./Products.html#why313"
+                  >Why 313X | TPCRM</a
+                >
+                <a class="items-dropdown" href="./Products.html#313cases"
+                  >313X | TPCRM use cases</a
+                >
+                <a class="items-dropdown" href="./Products.html#empower"
+                  >Empower your Cybersecurity
+                </a>
+              </div>
+            </div>
+            <div style="display: flex">
+              <a
+                class="contactUs"
+                href="./index-en.html#contact"
+                style="font-size: 16px"
+                >Contact Us</a
+              >
+              <div
+                style="padding-left: 20px; justify-content: center"
+                class="lang"
+              >
+                <svg
+                  class="items-nav"
+                  style="color: #808080; height: 35px"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                  ></path>
+                </svg>
+                <div class="dropdown-lang animated fadeIn">
+                  <a class="items-dropdown" href="./RespostaInvestigacao.html"
+                    >Português</a
+                  >
+                  <a class="items-dropdown" href="./ResponseInvestigation.html"
+                    >English</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-sm animated fadeIn" id="navbar-sm">
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./index-en.html">Company</a>
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./Prevention.html">Prevention</a>
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./ResponseInvestigation.html"
+              >Response & Investigation</a
+            >
+          </div>
+          <div style="padding-bottom: 10px; padding-top: 10px">
+            <a class="items-nav" href="./Products.html">Products</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="home">
+      <section class="homePage" id="homePage">
+        <div>
+          <div style="padding-top: 20vh; padding-bottom: 15vh">
+            <div class="header">
+              <h1 class="subTitleBig wow fadeIn">
+                Response and Investigation Services
+              </h1>
+              <h2 class="subTitle wow fadeIn">
+                Be resilient. Get help from 313X to respond to crises and, after
+                it, on disputes and investigations.
+              </h2>
+            </div>
+            <div class="header-sm">
+              <h1 class="subTitleBig wow fadeIn">
+                Response and Investigation Services
+              </h1>
+
+              <h2 class="subTitle wow fadeIn" data-wow-delay="0.2s">
+                Be resilient. Get help from 313X to Respond to crises and, after
+                it, on disputes and investigations.
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-top: auto;
+          "
+        >
+          <a href="#IncidentResponse">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 chevron-down"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
+        </div>
+        <div id="IncidentResponse"></div>
+      </section>
+      <section>
+        <div class="header-wrapper">
+          <h1 class="header-incident wow fadeIn">Incident Response</h1>
+          <h2 class="header-text wow fadeIn">
+            Get help from our skilled Incident Response team operating globally
+            to ensure rapid and thorough containment, remediation and recovery
+            of the most damaging cyber attacks.
+          </h2>
+          <div class="service-wrapper">
+            <h3 class="service-question" style="font-weight: normal">
+              High-level steps of Incident Response
+            </h3>
+            <ul class="list">
+              <li class="list-item wow fadeIn" style="line-height: 1.3">
+                <p>
+                  <strong>Network traffic analysis:</strong> Under the guidance
+                  of 313X experts your IT personnel implements Threat Hunting
+                  Framework for network traffic monitoring and suspicious
+                  behavior detection missed by signature-based cybersecurity
+                  systems
+                </p>
+              </li>
+              <li class="list-item wow fadeIn" style="line-height: 1.3">
+                <p>
+                  <strong>Forensic analysis: </strong> 313X specialists conduct
+                  express forensic analysis of workstations and servers
+                  compromised by cybercriminals to identify the initial attack
+                  vector, applied tools and techniques as well as exploited
+                  vulnerabilities
+                </p>
+              </li>
+              <li class="list-item wow fadeIn" style="line-height: 1.3">
+                <p>
+                  <strong>Malware analysis:</strong> Our certified malware
+                  analysts perform basic or advanced static and dynamic analysis
+                  of malicious code discovered during an investigation to
+                  determine other affected assets in the environment and prevent
+                  further intrusions
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div style="padding: 0px 0px 50px 0px">
+            <h3 class="service-question" style="font-weight: normal">
+              Our post-incident deliverables
+            </h3>
+            <ul class="list">
+              <li class="list-item wow fadeIn">
+                <p>
+                  <strong>Clear network infrastructure:</strong>We gather all
+                  necessary information for creating a list of Indicators of
+                  Compromise, write YARA-rules to clear your enterprise’s
+                  network from the infiltration
+                </p>
+              </li>
+              <li class="list-item wow fadeIn">
+                <p>
+                  <strong>Investigative report with attacker profile:</strong>
+                  Our experts explore the anatomy of the attack — how attackers
+                  gained a foothold and moved laterally and vertically inside
+                  your organization to steal confidential data
+                </p>
+              </li>
+              <li class="list-item wow fadeIn">
+                <p>
+                  <strong>Remediation report and recommendations:</strong>
+                  After analysis, we prepare a detailed report on how to adjust
+                  your security architecture and processes to strengthen your
+                  security posture
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div style="text-align: center; margin-bottom: 100px">
+          <a class="contactUsBig" href="./index-en.html#contact"
+            >Report an Incident</a
+          >
+        </div>
+      </section>
+      <section class="section-service" id="incidentInvestigation">
+        <div class="section-services">
+          <div class="service-wrapper">
+            <h1 class="service-header wow fadeIn">Cyber Investigation</h1>
+            <h2 class="service-text wow fadeIn">
+              Combating computer-based, financial, corporate crimes of varied
+              size and complexity.
+            </h2>
+            <div class="service-wrapper">
+              <h3 class="service-question">Why our investigators?</h3>
+              <ul class="list">
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong
+                      >Individual approach by special project team:</strong
+                    >
+                    Every investigation is different and may require a different
+                    route through the process. 313X’s investigations are
+                    conducted by a diverse project team consisting of
+                    e-Discovery and Forensic analysts, economic security,
+                    financial audit, corporate law specialists, financial crime
+                    experts
+                  </p>
+                </li>
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong
+                      >Collaboration with law enforcement agencies:</strong
+                    >
+                    As technology reaches into nearly all areas of our lives,
+                    law enforcement officers are challenged to maintain the
+                    skills and tools needed to conduct thorough investigations.
+                    Our experts work closely with international police in
+                    combating various types of crimes — from computer-based
+                    crimes to murders and missing people
+                  </p>
+                </li>
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong
+                      >Proprietary technologies for criminal detection:</strong
+                    >
+                    313X’s investigation department has adopted a proactive
+                    approach and developed a set of technologies for identifying
+                    groups or individuals who are assessed as being involved in
+                    ongoing criminal activity. We accelerate investigations
+                    using in-house tools for pattern analysis, network analysis,
+                    and tactical profiling
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="service-wrapper">
+              <h3 class="service-question">
+                What types of crimes do we handle?
+              </h3>
+              <h4 class="high-tech wow fadeIn">
+                High-tech crime investigations are the core area of our
+                activity. We conduct a wide variety of investigations,
+                including:
+              </h4>
+              <ul class="list">
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong>Data theft:</strong>
+                    Competitive espionage, phishing, intellectual property
+                    breach, theft of trade secrets, credentials and other
+                    sensitive information
+                  </p>
+                </li>
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong>Insider attacks:</strong>
+                    Abuse of authority, competitive espionage, critical
+                    infrastructure damaging, data leakage, account takeover
+                  </p>
+                </li>
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong>Information wars:</strong>
+                    Extortion, reputational damage, defamation, harassment and
+                    identity theft
+                  </p>
+                </li>
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong>Flood attacks:</strong>
+                    Overload of communication channels (emails, phone calls,
+                    social messengers)
+                  </p>
+                </li>
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong>DoS/DDoS attacks:</strong>
+                    Competitive and targeted attacks to overload web services
+                    and network
+                  </p>
+                </li>
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong>Critical infrastructure attacks:</strong>
+                    Attacks on water supply, transport infrastructure, power
+                    grids control systems
+                  </p>
+                </li>
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong>Malware attacks:</strong>
+                    Malware creation, proliferation and control, botnets,
+                    ransomware and spyware
+                  </p>
+                </li>
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong>Financial crimes:</strong>
+                    Cryptocurrency theft, online‑banking, mobile-banking, email
+                    fraud, ATMs, card processing, SWIFT, payment gateways
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="service-wrapper">
+              <h3 class="service-question">
+                What you get after the investigation
+              </h3>
+              <h4 class="high-tech wow fadeIn">
+                The results of our investigations include:
+              </h4>
+              <ul class="list">
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong>Detailed threat actor profile:</strong> We explore
+                    the anatomy of the attack and threat actor’s infrastructure,
+                    identify the mechanisms and recreate the sequence of events.
+                  </p>
+                </li>
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong>Professional evidence collection for court:</strong>
+                    313X investigators collect all digital evidence in
+                    compliance with legal requirements and prepare required
+                    documentation for presenting evidence correctly in court.
+                  </p>
+                </li>
+                <li class="list-item wow fadeIn">
+                  <p style="color: white">
+                    <strong>Law enforcement consultation:</strong>
+                    Our investigators have sound knowledge of the relevant law
+                    and provide full cycle consultation support to lawyers and
+                    different enforcement agencies on every stage of
+                    investigation.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="redTeaming" id="malware">
+        <div class="header-wrapper">
+          <h1 class="header-malware wow fadeIn">
+            Digital Forensics and Malware Analysis
+          </h1>
+          <h2 class="header-text wow fadeIn">
+            Evidence that fights back. Our forensic and malware analyses have
+            helped victims of infamous hacker groups come out as victors in
+            courts of law. Our experts can do the same for your company.
+          </h2>
+          <div class="service-wrapper">
+            <h3 class="service-question">Our high-expertise services</h3>
+            <ul class="list">
+              <li class="list-item wow fadeIn">
+                <p>
+                  <strong>Digital Forensics:</strong> Forensic examinations,
+                  initiated independently or by law enforcement agencies ensure
+                  that all the information needed is correctly seized and copied
+                </p>
+              </li>
+              <li class="list-item wow fadeIn">
+                <p>
+                  <strong>Malware Analysis:</strong> We examine malware while
+                  taking into consideration confidentiality requirements, for
+                  example by blocking any network interactions with harmful
+                  programs. We provide a comprehensive diagnosis and
+                  recommendations on further steps without additional risks
+                </p>
+              </li>
+              <li class="list-item wow fadeIn">
+                <p>
+                  <strong>Collection of digital evidence:</strong> Correctly
+                  collected and documented digital evidence forms the basis for
+                  further investigation or case preparation for court
+                  proceedings
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="service-wrapper-how">
+            <h3 class="service-question">How we can help you?</h3>
+            <ul class="list">
+              <li class="list-item wow fadeIn">
+                <p>
+                  <strong
+                    >Provide accurate information about the incident:</strong
+                  >
+                  We reconstruct incident timelines and provide insights into
+                  the motivation behind the attack and the level of employee
+                  involvement 
+                </p>
+              </li>
+              <li class="list-item wow fadeIn">
+                <p>
+                  <strong>Help build a strong court case:</strong>
+                  Prepare your legal team and build your case for court
+                </p>
+              </li>
+              <li class="list-item wow fadeIn">
+                <p>
+                  <strong
+                    >Detect residual malicious code in your network:</strong
+                  >
+                  We help identify the scope of compromise correctly, detect all
+                  the affected devices, and clear the network. It is crucial to
+                  be certain that the incident response team did not overlook
+                  anything to prevent further attacks
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div style="text-align: center; margin-bottom: 100px">
+          <a class="contactUsBig" href="./index-en.html#contact"
+            >Request an Investigation</a
+          >
+        </div>
+      </section>
+      <section class="footer-section" id="contact">
+        <!-- <div class="trusted-wrapper" id="contact">
+            <div>
+              <p class="trusted-header wow fadeIn">Trusted By</p>
+            </div>
+            <div class="trusted-img">
+              <img
+                class="escudo1 wow slideInUp"
+                data-wow-delay="0.3s"
+                src="./img/police.png"
+              />
+              <img
+                class="escudo2 wow slideInUp"
+                data-wow-delay="0.2s"
+                src="./img/pirate.png"
+              />
+              <img
+                class="escudo3 wow slideInUp"
+                data-wow-delay="0.4s"
+                src="./img/badge.png"
+              />
+            </div>
+          </div> -->
+
+        <div>
+          <div class="footer-wrapper">
+            <div class="company-footer">
+              <a href="./index-en.html" class="company-header">Company</a>
+              <div class="company-wrapper">
+                <a class="solutions-text" href="./index-en.html#about"
+                  >About 313X</a
+                >
+                <a class="solutions-text" href="./index-en.html#incident"
+                  >Full Cycle of Incident Management</a
+                >
+                <a class="solutions-text" href="./index-en.html#industries"
+                  >Industries</a
+                >
+                <a class="solutions-text" href="./index-en.html#contact"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+            <div class="solutions-footer">
+              <a href="./Prevention.html" class="solutions-header"
+                >Prevention</a
+              >
+              <div class="solutions-wrapper">
+                <a class="prevention-text" href="./Prevention.html#security"
+                  >Security Assessment</a
+                >
+                <a class="prevention-text" href="./Prevention.html#pentest"
+                  >Penetration Testing</a
+                >
+                <a class="prevention-text" href="./Prevention.html#redTeaming"
+                  >Red Teaming</a
+                >
+                <a class="prevention-text" href="./Prevention.html#consulting"
+                  >Consulting and Compliance Audit</a
+                >
+              </div>
+            </div>
+            <div class="services-footer">
+              <a href="./ResponseInvestigation.html" class="services-header"
+                >Response & Investigation</a
+              >
+              <div class="services-wrapper">
+                <a
+                  class="prevention-text"
+                  href="./ResponseInvestigation.html#IncidentResponse"
+                  >Incident Response</a
+                >
+                <a
+                  class="prevention-text"
+                  href="./ResponseInvestigation.html#incidentInvestigation"
+                  >Cyber Investigation</a
+                >
+                <a
+                  class="prevention-text"
+                  href="./ResponseInvestigation.html#malware"
+                  >Digital Forensics and Malware Analysis</a
+                >
+              </div>
+            </div>
+            <div class="products-footer">
+              <a class="products-header" href="./Products.html">Products</a>
+              <div class="services-wrapper">
+                <a class="prevention-text" href="./Products.html#why313"
+                  >Why 313X | TPCRM</a
+                >
+                <a class="prevention-text" href="./Products.html#313cases"
+                  >313X | TPCRM use cases</a
+                >
+                <a class="prevention-text" href="./Products.html#empower"
+                  >Empower your Cybersecurity
+                </a>
+              </div>
+            </div>
+
+            <div class="lang-footer">
+              <div>
+                <svg
+                  class="globe-footer"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <a class="lang-text-footer" href="./RespostaInvestigacao.html"
+                  >Português</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="logo-footer">
+            <div class="img-footer-wrapper">
+              <div class="policy-wrapper">
+                <!--<img class="linkedin-logo" src="./img/linkedin.png" />-->
+                <a
+                  href="https://www.linkedin.com/company/313xcybersecurity/"
+                  target="_blank"
+                >
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    class="linkedin-logo"
+                  >
+                    <path
+                      fill="white"
+                      d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                      class=""
+                    ></path>
+                  </svg>
+                </a>
+                <div class="policy-saas-wrapper">
+                  <a href="./PrivacyPolicy-en.html"
+                    ><p class="saas">Privacy Policy</p></a
+                  >
+                  <a href="./Saas-en.html"
+                    ><p class="policy">SaaS License Agreement</p></a
+                  >
+                </div>
+              </div>
+              <div class="logoImg-wrapper">
+                <img
+                  class="logoImg-footer"
+                  src="./img/313footer.png"
+                  alt="313x logo footer"
+                />
+              </div>
+            </div>
+            <div class="span-rights">
+              <span class="rights-reserved"
+                >2022 313X - All rights reserved</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+      function openDivNavbar() {
+        if (document.getElementById('navbar-sm').style.display === 'none') {
+          document.getElementById('navbar-sm').style.display = 'block';
+        } else {
+          document.getElementById('navbar-sm').style.display = 'none';
+        }
+      }
+    </script>
+  </body>
+</html>
